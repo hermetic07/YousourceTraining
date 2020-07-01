@@ -7,28 +7,21 @@ using Decorator.Interfaces;
 
 namespace Decorator.Classes
 {
-    public class AppendingBehavior : StringBehaviorDecorator
+    public class AppendingBehavior : IStringBehavior
     {
-        public AppendingBehavior(IStringBehavior stringBehavior) : base(stringBehavior)
+        IStringBehavior stringBehavior;
+        public AppendingBehavior(IStringBehavior stringBehavior)
         {
-
+            this.stringBehavior = stringBehavior;
         }
 
-        public override string Reverse(string input)
+        public string Reverse(string input)
         {
-            char[] chars = new char[input.Length];
-            for (int i = 0, j = input.Length - 1; i <= j; i++, j--)
-            {
-                chars[i] = input[j];
-                chars[j] = input[i];
-            }
+            string reversedString = this.stringBehavior.Reverse(input);
 
-            return Append(new string(chars));
-        }
+            string appendedString = string.Format("{0} Evander", reversedString);
 
-        private string Append(string reversedInput)
-        {
-            return reversedInput + "Evander";
+            return appendedString;
         }
     }
 }
