@@ -70,7 +70,6 @@
     <Compile Include="Classes\DebugLogger.cs" />
     <Compile Include="Classes\DefaultStringBehavior.cs" />
     <Compile Include="Classes\LoggingBehavior.cs" />
-    <Compile Include="Classes\StringBehaviorDecorator.cs" />
     <Compile Include="Interfaces\IStringBehavior.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

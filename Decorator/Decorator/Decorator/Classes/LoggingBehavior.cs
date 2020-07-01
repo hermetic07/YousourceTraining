@@ -8,31 +8,22 @@ using Decorator.Interfaces;
 
 namespace Decorator.Classes
 {
-    class LoggingBehavior : StringBehaviorDecorator
+    class LoggingBehavior : IStringBehavior
     {
-        public LoggingBehavior(IStringBehavior stringBehavior) : base(stringBehavior)
+        IStringBehavior stringBehavior;
+        public LoggingBehavior(IStringBehavior stringBehavior)
         {
-
+            this.stringBehavior = stringBehavior;
         }
 
-        public override string Reverse(string input)
+        public string Reverse(string input)
         {
-            char[] chars = new char[input.Length];
-            for (int i = 0, j = input.Length - 1; i <= j; i++, j--)
-            {
-                chars[i] = input[j];
-                chars[j] = input[i];
-            }
+            string reversedString = this.stringBehavior.Reverse(input);
 
-            Log(new string(chars));
-
-            return new string(chars);
-        }
-
-        private void Log(string reversedInput)
-        {
             DebugLogger debugLogger = new DebugLogger();
-            debugLogger.Log(reversedInput);
+            debugLogger.Log(reversedString);
+
+            return reversedString;
         }
     }
 }
