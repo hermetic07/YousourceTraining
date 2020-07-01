@@ -14,7 +14,7 @@ namespace Decorator
         {
             DefaultStringBehavior defaultStringBehavior = new DefaultStringBehavior();
             AppendingBehavior appendingBehavior = new AppendingBehavior(defaultStringBehavior);
-            LoggingBehavior loggingBehavior = new LoggingBehavior(defaultStringBehavior);
+            LoggingBehavior loggingBehavior = new LoggingBehavior(defaultStringBehavior, new DebugLogger());
 
             Console.Write("Enter a string: ");
             string _input = Console.ReadLine();

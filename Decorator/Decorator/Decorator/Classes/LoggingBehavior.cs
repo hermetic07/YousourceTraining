@@ -11,16 +11,18 @@ namespace Decorator.Classes
     class LoggingBehavior : IStringBehavior
     {
         IStringBehavior stringBehavior;
-        public LoggingBehavior(IStringBehavior stringBehavior)
+        ILogger debugLogger;
+
+        public LoggingBehavior(IStringBehavior stringBehavior, ILogger debugLogger)
         {
             this.stringBehavior = stringBehavior;
+            this.debugLogger = debugLogger;
         }
 
         public string Reverse(string input)
         {
             string reversedString = this.stringBehavior.Reverse(input);
 
-            DebugLogger debugLogger = new DebugLogger();
             debugLogger.Log(reversedString);
 
             return reversedString;
