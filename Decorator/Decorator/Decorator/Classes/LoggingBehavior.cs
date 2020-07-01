@@ -15,8 +15,6 @@ namespace Decorator.Classes
 
         }
 
-        
-
         public override string Reverse(string input)
         {
             char[] chars = new char[input.Length];
@@ -26,12 +24,12 @@ namespace Decorator.Classes
                 chars[j] = input[i];
             }
 
-            DebugLog(new string(chars));
+            Log(new string(chars));
 
             return new string(chars);
         }
 
-        private void DebugLog(string reversedInput)
+        private void Log(string reversedInput)
         {
             DebugLogger debugLogger = new DebugLogger();
             debugLogger.Log(reversedInput);

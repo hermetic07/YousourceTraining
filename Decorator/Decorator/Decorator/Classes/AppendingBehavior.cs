@@ -23,10 +23,10 @@ namespace Decorator.Classes
                 chars[j] = input[i];
             }
 
-            return AppendName(new string(chars));
+            return Append(new string(chars));
         }
 
-        private string AppendName(string reversedInput)
+        private string Append(string reversedInput)
         {
             return reversedInput + "Evander";
         }
