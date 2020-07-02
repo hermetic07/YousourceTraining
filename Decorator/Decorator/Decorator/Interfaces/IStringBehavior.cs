@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Decorator.Interfaces
+﻿namespace Decorator.Interfaces
 {
+    using System;
+
     public interface IStringBehavior
     {
-        string Reverse(String input);
+        string Reverse(string input);
     }
 }

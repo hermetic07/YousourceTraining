@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Decorator.Interfaces;
-
-namespace Decorator.Classes
+﻿namespace Decorator.Classes
 {
+    using Decorator.Interfaces;
+
     public class DefaultStringBehavior : IStringBehavior
     {
         public string Reverse(string input)
@@ -17,6 +12,7 @@ namespace Decorator.Classes
                 chars[i] = input[j];
                 chars[j] = input[i];
             }
+
             return new string(chars);
         }
     }
