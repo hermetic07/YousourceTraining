@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using Chain_of_Responsibility.Classes;
-
-namespace Chain_of_Responsibility.Handlers
+﻿namespace Chain_of_Responsibility.Handlers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Script.Serialization;
+    using Chain_of_Responsibility.Classes;
+
     public class JsonRequestHandler : BaseRequestHandler
     {
-        public override void Handle(Request _request)
+        public override void Handle(Request request)
         {
-            if (_request.ContentType == "json")
+            if (request.ContentType == "json")
             {
                 Console.WriteLine("JsonRequestHandler:");
 
-                var JsonObject = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(_request.Content);
+                var jsonObject = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(request.Content);
                 
-                foreach (var item in JsonObject)
+                foreach (var item in jsonObject)
                 {
-                    Console.WriteLine("Key: {0}, Value: {1} \n",item.Key,item.Value);
+                    Console.WriteLine("Key: {0}, Value: {1} \n", item.Key, item.Value);
                 }
             }
-            else if (successor != null)
+            else if (this.GetSuccessor() != null)
             {
-                successor.Handle(_request);
+                this.GetSuccessor().Handle(request);
             }
             else
             {

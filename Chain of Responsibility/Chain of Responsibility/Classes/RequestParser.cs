@@ -1,32 +1,27 @@
-﻿using Chain_of_Responsibility.Handlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chain_of_Responsibility.Classes
+﻿namespace Chain_of_Responsibility.Classes
 {
+    using Chain_of_Responsibility.Handlers;
+
     public class RequestParser
     {
-        Request request;
-        BaseRequestHandler _xml = new XmlRequestHandler();
-        BaseRequestHandler _json = new JsonRequestHandler();
+        private Request request;
+        private BaseRequestHandler xml = new XmlRequestHandler();
+        private BaseRequestHandler json = new JsonRequestHandler();
 
         public RequestParser(Request request)
         {
             this.request = request;
-            SetChain();
+            this.SetChain();
         }
 
         public void Parse()
         {
-            _xml.Handle(this.request);
+            this.xml.Handle(this.request);
         }
 
-        void SetChain()
+        public void SetChain()
         {
-            _xml.setSuccessor(_json);
+            this.xml.SetSuccessor(this.json);
         }
     }
 }

@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Chain_of_Responsibility.Classes;
-
-namespace Chain_of_Responsibility.Handlers
+﻿namespace Chain_of_Responsibility.Handlers
 {
+    using Chain_of_Responsibility.Classes;
+
     public abstract class BaseRequestHandler 
     {
-        protected BaseRequestHandler successor;
+        private BaseRequestHandler successor;
 
-        public abstract void Handle(Request _request);
+        public abstract void Handle(Request request);
 
-        public void setSuccessor(BaseRequestHandler successor)
+        public void SetSuccessor(BaseRequestHandler successor)
         {
             this.successor = successor;
+        }
+
+        public BaseRequestHandler GetSuccessor()
+        {
+            return this.successor;
         }
     }
 }

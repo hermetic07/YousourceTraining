@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Chain_of_Responsibility.Classes;
-using Chain_of_Responsibility.Handlers;
-
-namespace Chain_of_Responsibility
+﻿namespace Chain_of_Responsibility
 {
-    class Program
+    using System;
+    using Chain_of_Responsibility.Classes;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //JSON Data
-            Request _request = new Request() {
+            // JSON Data
+            Request request = new Request() 
+            {
                 ContentType = "json",
                 Content = @"{""name"":""John Doe"",""age"":20}"
             };
 
-            RequestParser requestParser = new RequestParser(_request);
+            RequestParser requestParser = new RequestParser(request);
             requestParser.Parse();
 
-            //XML Data
-            _request = new Request()
+            // XML Data
+            request = new Request()
             {
                 ContentType = "xml",
                 Content = @"<PurchaseOrder>
@@ -35,17 +31,17 @@ namespace Chain_of_Responsibility
                             </PurchaseOrder>"
             };
 
-            requestParser = new RequestParser(_request);
+            requestParser = new RequestParser(request);
             requestParser.Parse();
 
-            //Invalid data
-            _request = new Request()
+            // Invalid data
+            request = new Request()
             {
                 ContentType = "string",
                 Content = "test"
             };
 
-            requestParser = new RequestParser(_request);
+            requestParser = new RequestParser(request);
             requestParser.Parse();
 
             Console.ReadKey();
