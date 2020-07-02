@@ -12,22 +12,15 @@ namespace Chain_of_Responsibility
     {
         static void Main(string[] args)
         {
-            
-            Request _request = new Request() {
-                ContentType = "json",
-                Content = @"{""name"":""John Doe"",""age"":20}"
-            };
+            Request _request = new Request();
+
+            Console.WriteLine("Content Type: ");
+            _request.ContentType = Console.ReadLine();
+
+            Console.WriteLine("Content: ");
+            _request.Content = Console.ReadLine();
 
             RequestParser requestParser = new RequestParser(_request);
-            requestParser.Parse();
-
-            _request = new Request()
-            {
-                ContentType = "xml",
-                Content = @"<item><name>wrench</name></item>"
-            };
-
-            requestParser = new RequestParser(_request);
             requestParser.Parse();
 
             Console.ReadKey();

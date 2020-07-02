@@ -14,7 +14,7 @@ namespace Chain_of_Responsibility.Handlers
         {
             if (_request.ContentType == "json")
             {
-                var JSONObj = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(_request.Content);
+                var JsonObject = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(_request.Content);
                 Console.WriteLine("{0} handled request",this.GetType().Name);
             }
             else if (successor != null)
