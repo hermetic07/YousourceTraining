@@ -7,18 +7,15 @@ using Chain_of_Responsibility.Classes;
 
 namespace Chain_of_Responsibility.Handlers
 {
-    class BaseRequestHandler : RequestParser
+    public abstract class BaseRequestHandler 
     {
-        public override void Handle(Request _request)
+        protected BaseRequestHandler successor;
+
+        public abstract void Handle(Request _request);
+
+        public void setSuccessor(BaseRequestHandler successor)
         {
-            if (successor != null)
-            {
-                successor.Handle(_request);
-            }
-            else
-            {
-                Console.WriteLine("{0} handled request", this.GetType().Name);
-            }
+            this.successor = successor;
         }
     }
 }

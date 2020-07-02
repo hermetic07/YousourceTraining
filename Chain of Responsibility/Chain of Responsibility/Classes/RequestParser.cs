@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chain_of_Responsibility.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +7,26 @@ using System.Threading.Tasks;
 
 namespace Chain_of_Responsibility.Classes
 {
-    public abstract class RequestParser
+    public class RequestParser
     {
-        protected RequestParser successor;
+        Request request;
+        BaseRequestHandler _xml = new XmlRequestHandler();
+        BaseRequestHandler _json = new JsonRequestHandler();
 
-        public abstract void Handle(Request _request);
-
-        public void setSuccessor(RequestParser successor)
+        public RequestParser(Request request)
         {
-            this.successor = successor;
+            this.request = request;
+            SetChain();
+        }
+
+        public void Parse()
+        {
+            _xml.Handle(this.request);
+        }
+
+        void SetChain()
+        {
+            _xml.setSuccessor(_json);
         }
     }
 }
