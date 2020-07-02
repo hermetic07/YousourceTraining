@@ -12,7 +12,7 @@ namespace Chain_of_Responsibility
     {
         static void Main(string[] args)
         {
-            
+            //JSON Data
             Request _request = new Request() {
                 ContentType = "json",
                 Content = @"{""name"":""John Doe"",""age"":20}"
@@ -21,6 +21,7 @@ namespace Chain_of_Responsibility
             RequestParser requestParser = new RequestParser(_request);
             requestParser.Parse();
 
+            //XML Data
             _request = new Request()
             {
                 ContentType = "xml",
@@ -32,6 +33,16 @@ namespace Chain_of_Responsibility
                                     <Name>Evander</Name>
                                 </Customer>
                             </PurchaseOrder>"
+            };
+
+            requestParser = new RequestParser(_request);
+            requestParser.Parse();
+
+            //Invalid data
+            _request = new Request()
+            {
+                ContentType = "string",
+                Content = "test"
             };
 
             requestParser = new RequestParser(_request);
