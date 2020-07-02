@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,15 @@ namespace Chain_of_Responsibility.Handlers
         {
             if (_request.ContentType == "xml")
             {
+                Console.WriteLine("XmlRequestHandler:");
+
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(_request.Content);
 
-                Console.WriteLine("{0} handled request", this.GetType().Name);
+                for (int i = 0; i < xmlDoc.ChildNodes[0].ChildNodes.Count; i++)
+                {
+                    Console.WriteLine("Key: {0}, Value: {1} \n", xmlDoc.ChildNodes[0].ChildNodes[i].Name, xmlDoc.ChildNodes[0].ChildNodes[i].InnerText);
+                }
             }
             else if (successor != null)
             {

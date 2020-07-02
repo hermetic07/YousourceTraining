@@ -14,8 +14,14 @@ namespace Chain_of_Responsibility.Handlers
         {
             if (_request.ContentType == "json")
             {
+                Console.WriteLine("JsonRequestHandler:");
+
                 var JsonObject = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(_request.Content);
-                Console.WriteLine("{0} handled request",this.GetType().Name);
+                
+                foreach (var item in JsonObject)
+                {
+                    Console.WriteLine("Key: {0}, Value: {1} \n",item.Key,item.Value);
+                }
             }
             else if (successor != null)
             {
