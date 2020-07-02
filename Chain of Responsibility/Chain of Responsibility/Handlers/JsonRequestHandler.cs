@@ -21,6 +21,10 @@ namespace Chain_of_Responsibility.Handlers
             {
                 successor.Handle(_request);
             }
+            else
+            {
+                Console.WriteLine("Unable to find a specific handler for the request");
+            }
         }
     }
 }
