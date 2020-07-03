@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AndSpecification.cs" />
-    <Compile Include="Classes\OrderEmailSpecification.cs" />
-    <Compile Include="Classes\OrderNameSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderRecipientEmailSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderRecipientContactSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderSenderContactSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderSenderEmailSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderRecipientNameSpecification.cs" />
+    <Compile Include="Classes\OrderSpecification\OrderSenderNameSpecification.cs" />
     <Compile Include="Classes\OrderRequest.cs" />
     <Compile Include="Classes\Specification.cs" />
     <Compile Include="Program.cs" />

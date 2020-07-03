@@ -13,18 +13,39 @@
         {
             ICollection<string> errors = new List<string>();
 
-            OrderRequest orderRequest = new OrderRequest();
-            orderRequest.RecipientEmail = "evndr.ls@gmail.com";
-            orderRequest.SenderEmail = "evndr.ls@gmail.com";
-
-            OrderEmailSpecification emailSpecification = new OrderEmailSpecification();
-            OrderNameSpecification nameSpecification = new OrderNameSpecification();
-
-            emailSpecification.And(nameSpecification).IsSatisfiedBy(orderRequest, ref errors);
-
-            foreach (var item in errors)
+            OrderRequest orderRequest = new OrderRequest
             {
-                Console.WriteLine(item);
+                SenderName = "test",
+                SenderEmail = "emacandog@you-source.com",
+                SenderContactNumber = "+639476158346",
+                RecipientName = "Louis",
+                RecipientEmail = "evndr.ls@gmail.com",
+                RecipientContactNumber = "09476158346",
+                Dedication = "test"
+            };
+
+            // recipient and sender email
+            Specification<OrderRequest> orderSpecification = new OrderSenderEmailSpecification();
+            orderSpecification.And(new OrderRecipientEmailSpecification()).IsSatisfiedBy(orderRequest, ref errors);
+
+            // recipient and sender name
+            orderSpecification = new OrderSenderNameSpecification();
+            orderSpecification.And(new OrderRecipientNameSpecification()).IsSatisfiedBy(orderRequest, ref errors);
+
+            // recipient and sender contact number
+            orderSpecification = new OrderSenderNameSpecification();
+            orderSpecification.And(new OrderRecipientNameSpecification()).IsSatisfiedBy(orderRequest, ref errors);
+
+            if (errors.Count > 0)
+            {
+                foreach (var item in errors)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Valid order request");
             }
 
             Console.ReadKey();
