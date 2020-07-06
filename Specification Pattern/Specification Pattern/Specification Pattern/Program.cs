@@ -24,17 +24,13 @@
                 Dedication = "test"
             };
 
-            // recipient and sender email
             Specification<OrderRequest> orderSpecification = new OrderSenderEmailSpecification();
-            orderSpecification.And(new OrderRecipientEmailSpecification()).IsSatisfiedBy(orderRequest, ref errors);
-
-            // recipient and sender name
-            orderSpecification = new OrderSenderNameSpecification();
-            orderSpecification.And(new OrderRecipientNameSpecification()).IsSatisfiedBy(orderRequest, ref errors);
-
-            // recipient and sender contact number
-            orderSpecification = new OrderSenderNameSpecification();
-            orderSpecification.And(new OrderRecipientNameSpecification()).IsSatisfiedBy(orderRequest, ref errors);
+            orderSpecification.And(new OrderRecipientEmailSpecification())
+                .And(new OrderSenderContactSpecification())
+                .And(new OrderSenderNameSpecification())
+                .And(new OrderRecipientNameSpecification())
+                .And(new OrderRecipientContactSpecification())
+                .And(new OrderRecipientNameSpecification()).IsSatisfiedBy(orderRequest, ref errors);
 
             if (errors.Count > 0)
             {
