@@ -1,14 +1,14 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SpecificationPattern.Classes;
-using System.Collections.Generic;
-
 namespace SpecificationPattern.Tests
 {
+    using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SpecificationPattern.Classes;
+
     [TestClass]
     public class OrderSenderEmailSpecificationTest
     {
-        OrderSenderEmailSpecification target;
-        ICollection<string> errors;
+        private OrderSenderEmailSpecification target;
+        private ICollection<string> errors;
 
         [TestInitialize]
         public void Setup()
@@ -27,13 +27,12 @@ namespace SpecificationPattern.Tests
         [TestMethod]
         public void IsSatisfiedBy_Valid_True()
         {
-
             OrderRequest order = new OrderRequest()
             {
                 SenderEmail = "emacandog@you-source.com"
             };
 
-            var actual = this.target.IsSatisfiedBy(order,ref errors);
+            var actual = this.target.IsSatisfiedBy(order, ref this.errors);
 
             Assert.IsTrue(actual);
         }
@@ -41,13 +40,12 @@ namespace SpecificationPattern.Tests
         [TestMethod]
         public void IsSatisfiedBy_Invalid_False()
         {
-
             OrderRequest order = new OrderRequest()
             {
                 SenderEmail = "emacandog"
             };
 
-            var actual = this.target.IsSatisfiedBy(order, ref errors);
+            var actual = this.target.IsSatisfiedBy(order, ref this.errors);
 
             Assert.IsFalse(actual);
         }
