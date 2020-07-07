@@ -29,12 +29,10 @@ namespace Decorator.Tests
         }
 
         [TestMethod]
-        public void Reverse_Valid_ReverseString()
+        public void Reverse_ValidInputString_ReverseString()
         {
             var input = "test";
             var expected = "tset";
-
-            this.moqDebugLogger.Setup(a => a.Log(It.IsAny<string>())).Verifiable();
             this.moqStringBehavior.Setup(a => a.Reverse(It.IsAny<string>())).Returns("tset");
 
             var actual = this.target.Reverse(input);

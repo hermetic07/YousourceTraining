@@ -1,5 +1,6 @@
 ﻿namespace Decorator.Classes
 {
+    using System;
     using System.Diagnostics;
 
     public interface ILogger

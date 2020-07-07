@@ -26,7 +26,7 @@ namespace Decorator.Tests
         }
 
         [TestMethod]
-        public void Reverse_Valid_ReverseAppendedString()
+        public void Reverse_ValidInputString_ReverseAppendedString()
         {
             var input = "test";
             var expected = "tset Evander";
