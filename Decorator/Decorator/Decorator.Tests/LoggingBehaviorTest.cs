@@ -37,6 +37,8 @@ namespace Decorator.Tests
 
             var actual = this.target.Reverse(input);
 
+            this.moqDebugLogger.Verify(a => a.Log(It.IsAny<string>()), Times.Once);
+
             Assert.AreEqual(expected, actual);
         }
     }
