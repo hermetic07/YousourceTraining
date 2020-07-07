@@ -25,7 +25,7 @@ namespace SpecificationPattern.Tests
         }
 
         [TestMethod]
-        public void IsSatisfiedBy_Valid_True()
+        public void IsSatisfiedBy_ValidRequestModel_ReturnsTrue()
         {
             OrderRequest order = new OrderRequest()
             {
@@ -38,7 +38,7 @@ namespace SpecificationPattern.Tests
         }
 
         [TestMethod]
-        public void IsSatisfiedBy_Invalid_False()
+        public void IsSatisfiedBy_InvalidRequestModel_ReturnsFalse()
         {
             OrderRequest order = new OrderRequest()
             {
