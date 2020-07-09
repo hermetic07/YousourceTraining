@@ -7,17 +7,17 @@
     using System.Data.Common;
     using System.Data.SqlClient;
     using System.Threading.Tasks;
-    //using eGift.Infrastructure.Extensions;
-    //using eGift.Infrastructure.Providers;
+    using eGift.Infrastructure.Extensions;
+    using eGift.Infrastructure.Providers;
 
     public class SqlHelper : ISqlHelper
     {
         private readonly string connectionString;
 
-        //public SqlHelper(IConnectionStringProvider provider)
-        //{
-        //    this.connectionString = provider.GetConnectionString();
-        //}
+        public SqlHelper(IConnectionStringProvider provider)
+        {
+            this.connectionString = provider.GetConnectionString();
+        }
 
         public async Task ExecuteAsync(SqlCommand command)
         {
@@ -61,7 +61,7 @@
                         {
                             if (reader.HasRows)
                             {
-                                //result = reader.AsArray<List<T>>();
+                                result = reader.AsArray<List<T>>();
                             }
                         }
                     }
@@ -93,7 +93,7 @@
                         {
                             if (reader.HasRows)
                             {
-                                //result = reader.As<T>();
+                                result = reader.As<T>();
                             }
                         }
                     }

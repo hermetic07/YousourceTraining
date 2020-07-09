@@ -5,6 +5,7 @@
     using Api.Extensions;
     using Api.Messages.Products;
     using eGift.Services.Product;
+    using eGift.Services.Product.Models;
 
     /// <summary>
     /// Api Controllers should only depend on Services
@@ -30,9 +31,21 @@
             return this.StatusCode(result.Code);
         }
 
-        public string ViewProducts()
+        public async Task<IActionResult> ViewProducts()
         {
-            return "accessed";
+            Product product = new Product()
+            {
+                MerchantId = 1,
+                ProductName = ""
+            };
+
+            CreateProductWebRequest webRequest = new CreateProductWebRequest()
+            {
+                Data = product
+            };
+
+            var result = await this.service.CreateProductAsync(webRequest.AsRequest());
+            return Ok("accessed");
         }
     }
 }

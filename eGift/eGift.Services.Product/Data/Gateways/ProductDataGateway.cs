@@ -12,9 +12,10 @@
         private readonly ISqlHelper helper;
         private readonly IProductSqlCommandFactory factory;
 
-        public ProductDataGateway(IProductSqlCommandFactory factory)
+        public ProductDataGateway(IProductSqlCommandFactory factory, ISqlHelper helper)
         {
             this.factory = factory;
+            this.helper = helper;
         }
 
         public async Task InsertProductAsync(ProductEntity product)

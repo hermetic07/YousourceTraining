@@ -27,7 +27,7 @@ namespace eGift
         public void ConfigureServices(IServiceCollection services)
         {
             services.InjectProductService(this.Configuration);
-
+            services.InjectDataService(this.Configuration);
             services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
