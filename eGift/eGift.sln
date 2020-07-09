@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eGift.Api", "eGift\eGift.Api.csproj", "{DAC04C51-869E-4AB9-89DF-16455E060FE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{42B454AE-FF03-4C5C-9CD7-311E5F9F8C3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B2F23350-DBEE-49DA-9F47-BF0FBCA8974E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{92B1558D-6478-49BF-B6BF-CDA3D9AB5D25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C06A1091-2F30-45D9-B40C-F8E29ABEE19E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "eGift.Data", "Data\Data\eGift.Data.sqlproj", "{58CC93D3-65C2-43DB-9ED6-4316924A20C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eGift.Infrastructure", "eGift.Infrastructure\eGift.Infrastructure.csproj", "{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eGift.Services.Product", "eGift.Services.Product\eGift.Services.Product.csproj", "{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC04C51-869E-4AB9-89DF-16455E060FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC04C51-869E-4AB9-89DF-16455E060FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC04C51-869E-4AB9-89DF-16455E060FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC04C51-869E-4AB9-89DF-16455E060FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAC04C51-869E-4AB9-89DF-16455E060FE3} = {42B454AE-FF03-4C5C-9CD7-311E5F9F8C3D}
+		{92B1558D-6478-49BF-B6BF-CDA3D9AB5D25} = {B2F23350-DBEE-49DA-9F47-BF0FBCA8974E}
+		{58CC93D3-65C2-43DB-9ED6-4316924A20C2} = {C06A1091-2F30-45D9-B40C-F8E29ABEE19E}
+		{149C9E41-F55C-4D46-8D8C-73E9BBDA4BF9} = {C06A1091-2F30-45D9-B40C-F8E29ABEE19E}
+		{EF0D4C2C-D9F7-4FB8-8037-BCEDB121F2D8} = {92B1558D-6478-49BF-B6BF-CDA3D9AB5D25}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79829E90-DC6C-4B9A-A6FC-4D15266E44C8}
+	EndGlobalSection
+EndGlobal
