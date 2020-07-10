@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\eGift.Services.Merchant\eGift.Services.Merchant.csproj" />
+    <ProjectReference Include="..\eGift.Services.Order\eGift.Services.Order.csproj" />
     <ProjectReference Include="..\eGift.Services.Product\eGift.Services.Product.csproj" />
   </ItemGroup>
 
