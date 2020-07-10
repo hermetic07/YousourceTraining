@@ -15,7 +15,7 @@
     /// the goal is to decouple class libraries.
     /// </summary>
 
-    [Route("api/[action]")]
+    [Route("api/[controller]/[action]")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService service;

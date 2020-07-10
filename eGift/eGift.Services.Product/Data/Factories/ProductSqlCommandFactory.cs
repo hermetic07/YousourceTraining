@@ -23,5 +23,27 @@
 
             return result;
         }
+
+        public SqlCommand CreateGetProductsCommand()
+        {
+            var result = new SqlCommand("sp_GetProducts")
+            {
+                CommandTimeout = 30,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            return result;
+        }
+
+        public SqlCommand CreateGetProductCommand(ProductEntity product)
+        {
+            var result = new SqlCommand("sp_GetProduct")
+            {
+                CommandTimeout = 30,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            return result;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace eGift.Services.Product.Extensions
 {
-    using Models;
+    using eGift.Services.Product.Models;
     using eGift.Services.Product.Data.Entities;
 
     /// <summary>

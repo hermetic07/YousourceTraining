@@ -6,6 +6,10 @@
     public interface IProductSqlCommandFactory
     {
         SqlCommand CreateInsertProductCommand(ProductEntity product);
+
+        SqlCommand CreateGetProductsCommand();
+
+        SqlCommand CreateGetProductCommand(ProductEntity product);
     }
 }
 

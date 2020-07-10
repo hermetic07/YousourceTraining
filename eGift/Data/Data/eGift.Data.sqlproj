@@ -59,9 +59,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Merchants.sql" />
+    <Build Include="StoredProcedures\sp_GetMerchants.sql" />
+    <Build Include="StoredProcedures\sp_GetMerchant.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Orders.sql" />
