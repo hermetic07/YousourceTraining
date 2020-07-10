@@ -25,5 +25,18 @@
 
             return result;
         }
+
+        public static GetProductRequest AsRequest(this GetProductWebRequest request)
+        {
+            var result = new GetProductRequest
+            {
+                Product = new Product
+                {
+                    ProductId = request.Data.ProductId
+                }
+            };
+
+            return result;
+        }
     }
 }

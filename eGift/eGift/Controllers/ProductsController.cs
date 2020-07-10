@@ -30,5 +30,18 @@
             var result = await this.service.CreateProductAsync(webRequest.AsRequest());
             return this.StatusCode(result.Code);
         }
+
+        public async Task<IActionResult> GetProducts()
+        {
+            var result = await this.service.GetProductsAsync();
+            return Ok(result);
+        }
+
+        public async Task<IActionResult> GetProduct(GetProductWebRequest webRequest)
+        {
+            var result = await this.service.GetProductAsync(webRequest.AsRequest());
+
+            return Ok(result);
+        }
     }
 }
