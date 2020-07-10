@@ -38,5 +38,41 @@
 
             return response;
         }
+
+        public async Task<GetProductResponse> GetProductAsync(GetProductRequest request)
+        {
+            var response = new GetProductResponse { Code = 200 };
+
+            try
+            {
+                var result = await this.gateway.GetProductAsync(request.Product.AsEntity());
+
+                response.Product = result.AsResponse();
+            }
+            catch (Exception ex)
+            {
+                throw new ProductServiceException(ex);
+            }
+
+            return response;
+        }
+
+        public async Task<GetProductsResponse> GetProductsAsync()
+        {
+            var response = new GetProductsResponse { Code = 200 };
+
+            try
+            {
+                var result = await this.gateway.GetProductsAsync();
+
+                response.Products = result.AsResponseList();
+            }
+            catch (Exception ex)
+            {
+                throw new ProductServiceException(ex);
+            }
+
+            return response;
+        }
     }
 }

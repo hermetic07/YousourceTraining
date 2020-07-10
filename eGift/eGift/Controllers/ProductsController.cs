@@ -30,22 +30,5 @@
             var result = await this.service.CreateProductAsync(webRequest.AsRequest());
             return this.StatusCode(result.Code);
         }
-
-        public async Task<IActionResult> ViewProducts()
-        {
-            Product product = new Product()
-            {
-                MerchantId = 1,
-                ProductName = ""
-            };
-
-            CreateProductWebRequest webRequest = new CreateProductWebRequest()
-            {
-                Data = product
-            };
-
-            var result = await this.service.CreateProductAsync(webRequest.AsRequest());
-            return Ok("accessed");
-        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[sp_GetMerchant]
-	@id int
+	@id UNIQUEIDENTIFIER
 AS
 	SELECT * FROM Merchants
 	WHERE MerchantId = @id

@@ -43,6 +43,8 @@
                 CommandType = CommandType.StoredProcedure
             };
 
+            result.Parameters.AddWithValue("@id", product.MerchantId);
+
             return result;
         }
     }

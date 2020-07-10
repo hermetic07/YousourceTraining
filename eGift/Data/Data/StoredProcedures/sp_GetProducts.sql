@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[sp_GetProducts]
+	@id UNIQUEIDENTIFIER
+AS
+	SELECT * FROM Products
+RETURN 0

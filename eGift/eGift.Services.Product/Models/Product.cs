@@ -9,7 +9,7 @@
         public Guid ProductId { get; set; }
 
         [DataMember]
-        public int MerchantId { get; set; }
+        public Guid MerchantId { get; set; }
 
         [DataMember]
         public string ProductName { get; set; }

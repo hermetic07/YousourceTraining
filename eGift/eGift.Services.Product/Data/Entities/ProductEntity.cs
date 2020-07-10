@@ -6,7 +6,7 @@
     {
         public Guid ProductId { get; set; }
 
-        public int MerchantId { get; set; }
+        public Guid MerchantId { get; set; }
 
         public string ProductName { get; set; }
     }

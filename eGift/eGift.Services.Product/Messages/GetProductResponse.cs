@@ -1,14 +1,14 @@
-﻿namespace eGift.Services.Merchant.Messages
+﻿namespace eGift.Services.Product.Messages
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
     using Models;
 
     [DataContract]
-    public class GetMerchantsResponse : Response
+    public class GetProductResponse : Response
     {
         [DataMember]
-        public List<Merchant> Merchants { get; set; }
+        public Product Product { get; set; }
     }
 }
 

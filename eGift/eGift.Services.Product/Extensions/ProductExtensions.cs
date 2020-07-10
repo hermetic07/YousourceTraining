@@ -2,6 +2,8 @@
 {
     using eGift.Services.Product.Models;
     using eGift.Services.Product.Data.Entities;
+    using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another
@@ -19,6 +21,32 @@
                 ProductId = product.ProductId,
                 MerchantId = product.MerchantId
             };
+
+            return result;
+        }
+
+        public static Product AsResponse(this ProductEntity product)
+        {
+            var result = new Product
+            {
+                MerchantId = product.MerchantId,
+                ProductId = product.ProductId,
+                ProductName = product.ProductName
+            };
+
+            return result;
+        }
+
+        public static List<Product> AsResponseList(this List<ProductEntity> products)
+        {
+            var result = (from product in products
+                          select new Product
+                          {
+                              MerchantId = product.MerchantId,
+                              ProductId = product.ProductId,
+                              ProductName = product.ProductName
+                          }
+                          ).ToList();
 
             return result;
         }

@@ -42,7 +42,7 @@
             {
                 var result = await this.gateway.GetMerchantsAsync();
 
-                response.Merchant = result.AsResponseList();
+                response.Merchants = result.AsResponseList();
             }
             catch (Exception ex)
             {

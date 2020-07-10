@@ -65,6 +65,8 @@
     <Build Include="Tables\Merchants.sql" />
     <Build Include="StoredProcedures\sp_GetMerchants.sql" />
     <Build Include="StoredProcedures\sp_GetMerchant.sql" />
+    <Build Include="StoredProcedures\sp_GetProduct.sql" />
+    <Build Include="StoredProcedures\sp_GetProducts.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Orders.sql" />
