@@ -37,7 +37,7 @@
             return Ok(result);
         }
 
-        public async Task<IActionResult> GetProduct(GetProductWebRequest webRequest)
+        public async Task<IActionResult> GetProduct([FromBody]GetProductWebRequest webRequest)
         {
             var result = await this.service.GetProductAsync(webRequest.AsRequest());
 
