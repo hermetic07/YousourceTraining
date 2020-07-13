@@ -7,5 +7,5 @@ AS
 	ON p.ProductId = o.ProductId
 	INNER JOIN Merchants m
 	ON m.MerchantId = p.MerchantId
-	WHERE p.ProductId = @id
+	WHERE o.OrderId = @id
 RETURN 0

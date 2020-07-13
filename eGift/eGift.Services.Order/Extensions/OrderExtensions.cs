@@ -17,6 +17,7 @@
         {
             var result = new OrderEntity
             {
+                OrderId = order.OrderId,
                 ProductId = order.ProductId,
                 MerchantId = order.MerchantId,
                 SenderName = order.SenderName,

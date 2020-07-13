@@ -32,18 +32,5 @@
 
             return Ok(result);
         }
-
-        public IActionResult GetMerchantRequest()
-        {
-            GetMerchantWebRequest webRequest = new GetMerchantWebRequest()
-            {
-                Data = new Merchant()
-                {
-                    MerchantId = Guid.Parse("333760CA-3A91-4278-AF73-46257EF7E0F1")
-                }
-            };
-
-            return Ok(webRequest);
-        }
     }
 }

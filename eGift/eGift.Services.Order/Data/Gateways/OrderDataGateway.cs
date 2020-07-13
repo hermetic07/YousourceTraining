@@ -19,11 +19,11 @@
             this.helper = helper;
         }
 
-        public async Task InsertOrderAsync(OrderEntity product)
+        public async Task InsertOrderAsync(OrderEntity order)
         {
             try
             {
-                var command = this.factory.CreateInsertOrderCommand(product);
+                var command = this.factory.CreateInsertOrderCommand(order);
                 await this.helper.ExecuteAsync(command);
             }
             catch (Exception ex)
@@ -55,11 +55,11 @@
             }
         }
 
-        public async Task<OrderEntity> GetOrderAsync(OrderEntity product)
+        public async Task<OrderEntity> GetOrderAsync(OrderEntity order)
         {
             try
             {
-                var command = this.factory.CreateGetOrderCommand(product);
+                var command = this.factory.CreateGetOrderCommand(order);
                 var result = await this.helper.ReadAsync<OrderEntity>(command);
 
                 return result;

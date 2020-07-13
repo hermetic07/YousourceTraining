@@ -1,7 +1,7 @@
 ﻿namespace Api.Messages.Order
 {
     using Newtonsoft.Json;
-    using eGift.Services.Order.Models;
+    using Api.Models.Products;
 
     /// <summary>
     /// Web Models directly map to the JSON passed to the API and should contain necessary JsonProperty mappings.
@@ -9,6 +9,6 @@
     public class GetOrderWebRequest
     {
         [JsonProperty("data")]
-        public Order Data { get; set; }
+        public OrderWebModel Data { get; set; }
     }
 }
