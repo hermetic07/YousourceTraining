@@ -16,7 +16,7 @@
             this.gateway = gateway;
         }
 
-        public async Task<CreateOrderResponse> CreateProductAsync(CreateOrderRequest request)
+        public async Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
         {
             var response = new CreateOrderResponse { Code = 200 };
 
@@ -39,7 +39,7 @@
             return response;
         }
 
-        public async Task<GetOrderResponse> GetProductAsync(GetOrderRequest request)
+        public async Task<GetOrderResponse> GetOrderAsync(GetOrderRequest request)
         {
             var response = new GetOrderResponse { Code = 200 };
 
@@ -57,7 +57,7 @@
             return response;
         }
 
-        public async Task<GetOrdersResponse> GetProductsAsync()
+        public async Task<GetOrdersResponse> GetOrdersAsync()
         {
             var response = new GetOrdersResponse { Code = 200 };
 

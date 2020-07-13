@@ -9,9 +9,12 @@
         public Guid ProductId { get; set; }
 
         [DataMember]
+        public string ProductName { get; set; }
+
+        [DataMember]
         public Guid MerchantId { get; set; }
 
         [DataMember]
-        public string ProductName { get; set; }
+        public string MerchantName { get; set; }
     }
 }

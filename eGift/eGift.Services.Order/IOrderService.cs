@@ -5,10 +5,10 @@
 
     public interface IOrderService
     {
-        Task<CreateOrderResponse> CreateProductAsync(CreateOrderRequest request);
+        Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request);
 
-        Task<GetOrdersResponse> GetProductsAsync();
+        Task<GetOrdersResponse> GetOrdersAsync();
 
-        Task<GetOrderResponse> GetProductAsync(GetOrderRequest request);
+        Task<GetOrderResponse> GetOrderAsync(GetOrderRequest request);
     }
 }

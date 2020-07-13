@@ -68,6 +68,8 @@
     <Build Include="StoredProcedures\sp_GetProduct.sql" />
     <Build Include="StoredProcedures\sp_GetProducts.sql" />
     <Build Include="StoredProcedures\sp_InsertOrder.sql" />
+    <Build Include="StoredProcedures\sp_GetOrder.sql" />
+    <Build Include="StoredProcedures\sp_GetOrders.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Orders.sql" />

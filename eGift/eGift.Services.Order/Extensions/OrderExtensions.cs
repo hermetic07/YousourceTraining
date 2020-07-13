@@ -11,7 +11,7 @@
     /// Converted into Service Model classes via Extension methods. 
     /// In this way, models are decoupled. This is an intentional code repetition.
     /// </summary>
-    public static class ProductExtensions
+    public static class OrderExtensions
     {
         public static OrderEntity AsEntity(this Order order)
         {
@@ -34,7 +34,9 @@
             {
                 OrderId = order.OrderId,
                 ProductId = order.ProductId,
+                ProductName = order.ProductName,
                 MerchantId = order.MerchantId,
+                MerchantName = order.MerchantName,
                 SenderName = order.SenderName,
                 SenderEmail = order.SenderEmail,
                 RecipientEmail = order.RecipientEmail,
@@ -51,7 +53,9 @@
                             {
                                 OrderId = order.OrderId,
                                 ProductId = order.ProductId,
+                                ProductName = order.ProductName,
                                 MerchantId = order.MerchantId,
+                                MerchantName = order.MerchantName,
                                 SenderName = order.SenderName,
                                 SenderEmail = order.SenderEmail,
                                 RecipientEmail = order.RecipientEmail,

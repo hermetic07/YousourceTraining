@@ -30,6 +30,7 @@
             var result = new Product
             {
                 MerchantId = product.MerchantId,
+                MerchantName = product.MerchantName,
                 ProductId = product.ProductId,
                 ProductName = product.ProductName
             };
@@ -43,6 +44,7 @@
                           select new Product
                           {
                               MerchantId = product.MerchantId,
+                              MerchantName = product.MerchantName,
                               ProductId = product.ProductId,
                               ProductName = product.ProductName
                           }
