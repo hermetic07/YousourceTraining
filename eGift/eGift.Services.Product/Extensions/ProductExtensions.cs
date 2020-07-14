@@ -1,9 +1,9 @@
-﻿namespace eGift.Services.Product.Extensions
+﻿namespace Egift.Services.Product.Extensions
 {
-    using eGift.Services.Product.Models;
-    using eGift.Services.Product.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
+    using Egift.Services.Product.Data.Entities;
+    using Egift.Services.Product.Models;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another
@@ -47,8 +47,7 @@
                               MerchantName = product.MerchantName,
                               ProductId = product.ProductId,
                               ProductName = product.ProductName
-                          }
-                          ).ToList();
+                          }).ToList();
 
             return result;
         }

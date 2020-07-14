@@ -1,8 +1,8 @@
-﻿namespace eGift.Api.Extensions.Injection
+﻿namespace Egift.Api.Extensions.Injection
 {
-    using eGift.Services.Product;
-    using eGift.Services.Product.Data.Factories;
-    using eGift.Services.Product.Data.Gateways;
+    using Egift.Services.Product;
+    using Egift.Services.Product.Data.Factories;
+    using Egift.Services.Product.Data.Gateways;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +13,6 @@
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductSqlCommandFactory, ProductSqlCommandFactory>();
             services.AddScoped<IProductDataGateway, ProductDataGateway>();
-
         }
     }
 }

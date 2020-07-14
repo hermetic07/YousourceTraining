@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Order.Data.Entities
+﻿namespace Egift.Services.Order.Data.Entities
 {
     using System;
 

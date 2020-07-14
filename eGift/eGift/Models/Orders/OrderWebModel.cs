@@ -1,7 +1,7 @@
-﻿namespace Api.Models.Products
+﻿namespace Egift.Api.Models.Orders
 {
-    using Newtonsoft.Json;
     using System;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Web Models directly map to the JSON passed to the API and should contain necessary JsonProperty mappings.
@@ -34,7 +34,5 @@
 
         [JsonProperty("recipientEmail")]
         public string RecipientEmail { get; set; }
-        
     }
 }
-

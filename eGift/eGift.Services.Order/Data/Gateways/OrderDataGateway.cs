@@ -1,12 +1,12 @@
-﻿namespace eGift.Services.Order.Data.Gateways
+﻿namespace Egift.Services.Order.Data.Gateways
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Infrastructure.Helpers;
-    using eGift.Services.Order.Data.Entities;
-    using eGift.Services.Order.Data.Factories;
-    using eGift.Services.Order.Exceptions;
+    using Egift.Infrastructure.Helpers;
+    using Egift.Services.Order.Data.Entities;
+    using Egift.Services.Order.Data.Factories;
+    using Egift.Services.Order.Exceptions;
 
     public class OrderDataGateway : IOrderDataGateway
     {

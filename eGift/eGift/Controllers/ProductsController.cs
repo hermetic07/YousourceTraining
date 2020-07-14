@@ -1,11 +1,12 @@
 ﻿namespace Api.Controllers
 {
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Mvc;
     using Api.Extensions;
     using Api.Messages.Products;
-    using eGift.Services.Product;
-    using eGift.Services.Product.Models;
+    using Egift.Services.Product;
+    using Egift.Services.Product.Models;
+    using Microsoft.AspNetCore.Cors;
+    using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
     /// Api Controllers should only depend on Services
@@ -14,7 +15,7 @@
     /// Api Controllers accepts Web Models and transforms them to Service Models while both Models are mostly identical,
     /// the goal is to decouple class libraries.
     /// </summary>
-
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]/[action]")]
     public class ProductsController : ControllerBase
     {
@@ -34,14 +35,14 @@
         public async Task<IActionResult> GetProducts()
         {
             var result = await this.service.GetProductsAsync();
-            return Ok(result);
+            return this.Ok(result);
         }
 
         public async Task<IActionResult> GetProduct([FromBody]GetProductWebRequest webRequest)
         {
             var result = await this.service.GetProductAsync(webRequest.AsRequest());
 
-            return Ok(result);
+            return this.Ok(result);
         }
     }
 }

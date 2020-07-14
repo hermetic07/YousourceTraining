@@ -1,7 +1,7 @@
-﻿namespace eGift.Services.Product
+﻿namespace Egift.Services.Product
 {
     using System.Threading.Tasks;
-    using eGift.Services.Product.Messages;
+    using Egift.Services.Product.Messages;
 
     public interface IProductService
     {

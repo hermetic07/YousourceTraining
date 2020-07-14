@@ -1,8 +1,8 @@
-﻿namespace eGift.Services.Merchant.Data.Gateways
+﻿namespace Egift.Services.Merchant.Data.Gateways
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Services.Merchant.Data.Entities;
+    using Egift.Services.Merchant.Data.Entities;
 
     public interface IMerchantDataGateway
     {

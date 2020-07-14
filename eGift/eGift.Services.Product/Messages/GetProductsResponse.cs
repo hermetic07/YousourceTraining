@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Product.Messages
+﻿namespace Egift.Services.Product.Messages
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -11,4 +11,3 @@
         public List<Product> Products { get; set; }
     }
 }
-

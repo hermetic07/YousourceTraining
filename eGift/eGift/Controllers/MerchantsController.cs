@@ -1,14 +1,14 @@
 ﻿namespace Api.Controllers
 {
+    using System;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Mvc;
     using Api.Extensions;
     using Api.Messages.Merchant;
-    using eGift.Services.Merchant;
-    using eGift.Services.Merchant.Models;
-    using System;
-    using eGift.Services.Merchant.Messages;
+    using Egift.Services.Merchant;
+    using Microsoft.AspNetCore.Cors;
+    using Microsoft.AspNetCore.Mvc;
 
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]/[action]")]
     public class MerchantsController : ControllerBase
     {
@@ -22,7 +22,7 @@
         public async Task<IActionResult> GetMerchants()
         {
             var result = await this.service.GetMerchantsAsync();
-            return Ok(result);
+            return this.Ok(result);
         }
 
         [HttpPost]
@@ -30,7 +30,7 @@
         {
             var result = await this.service.GetMerchantAsync(webRequest.AsRequest());
 
-            return Ok(result);
+            return this.Ok(result);
         }
     }
 }

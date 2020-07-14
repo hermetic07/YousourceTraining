@@ -1,17 +1,17 @@
-﻿namespace eGift.Api.Extensions.Injection
+﻿namespace Egift.Api.Extensions.Injection
 {
-    using eGift.Api.Models.Connections;
-    using eGift.Infrastructure.Helpers;
-    using eGift.Infrastructure.Providers;
-    using eGift.Services.Product;
-    using eGift.Services.Product.Data.Factories;
-    using eGift.Services.Product.Data.Gateways;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Egift.Api.Models.Connections;
+    using Egift.Infrastructure.Helpers;
+    using Egift.Infrastructure.Providers;
+    using Egift.Services.Product;
+    using Egift.Services.Product.Data.Factories;
+    using Egift.Services.Product.Data.Gateways;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
 
     public static class DataServices
     {
@@ -19,7 +19,6 @@
         {
             services.AddScoped<IConnectionStringProvider, ConnectionStringProvider>();
             services.AddScoped<ISqlHelper, SqlHelper>();
-
         }
     }
 }

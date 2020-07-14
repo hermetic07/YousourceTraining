@@ -1,8 +1,8 @@
-﻿namespace eGift.Services.Order.Data.Gateways
+﻿namespace Egift.Services.Order.Data.Gateways
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Services.Order.Data.Entities;
+    using Egift.Services.Order.Data.Entities;
 
     public interface IOrderDataGateway
     {

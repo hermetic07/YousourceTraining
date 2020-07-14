@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "eGift": {
+    "Egift": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

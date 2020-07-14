@@ -1,12 +1,12 @@
-﻿namespace eGift.Services.Product.Data.Gateways
+﻿namespace Egift.Services.Product.Data.Gateways
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Infrastructure.Helpers;
-    using eGift.Services.Product.Data.Entities;
-    using eGift.Services.Product.Data.Factories;
-    using eGift.Services.Product.Exceptions;
+    using Egift.Infrastructure.Helpers;
+    using Egift.Services.Product.Data.Entities;
+    using Egift.Services.Product.Data.Factories;
+    using Egift.Services.Product.Exceptions;
 
     public class ProductDataGateway : IProductDataGateway
     {

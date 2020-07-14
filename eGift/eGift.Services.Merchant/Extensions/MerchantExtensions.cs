@@ -1,9 +1,9 @@
-﻿namespace eGift.Services.Merchant.Extensions
+﻿namespace Egift.Services.Merchant.Extensions
 {
-    using eGift.Services.Merchant.Models;
-    using eGift.Services.Merchant.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
+    using Egift.Services.Merchant.Data.Entities;
+    using Egift.Services.Merchant.Models;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another
@@ -37,13 +37,12 @@
 
         public static List<Merchant> AsResponseList(this List<MerchantEntity> merchants)
         {
-            var result = ( from merchant in merchants
+            var result = (from merchant in merchants
                            select new Merchant
                            {
                                MerchantId = merchant.MerchantId,
                                MerchantName = merchant.MerchantName,
-                           }
-                          ).ToList();
+                           }).ToList();
 
             return result;
         }

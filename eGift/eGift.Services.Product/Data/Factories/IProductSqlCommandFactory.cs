@@ -1,7 +1,7 @@
-﻿namespace eGift.Services.Product.Data.Factories
+﻿namespace Egift.Services.Product.Data.Factories
 {
     using System.Data.SqlClient;
-    using eGift.Services.Product.Data.Entities;
+    using Egift.Services.Product.Data.Entities;
 
     public interface IProductSqlCommandFactory
     {
@@ -12,4 +12,3 @@
         SqlCommand CreateGetProductCommand(ProductEntity product);
     }
 }
-

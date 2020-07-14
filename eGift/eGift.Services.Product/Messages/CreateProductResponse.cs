@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Product.Messages
+﻿namespace Egift.Services.Product.Messages
 {
     using System.Runtime.Serialization;
 
@@ -7,4 +7,3 @@
     {
     }
 }
-

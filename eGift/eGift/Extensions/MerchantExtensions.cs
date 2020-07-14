@@ -1,10 +1,10 @@
 ﻿namespace Api.Extensions
 {
     using Api.Messages.Merchant;
-    using eGift.Services.Merchant.Messages;
-    using eGift.Services.Merchant.Models;
-    using eGift.Services.Product.Messages;
-    using eGift.Services.Product.Models;
+    using Egift.Services.Merchant.Messages;
+    using Egift.Services.Merchant.Models;
+    using Egift.Services.Product.Messages;
+    using Egift.Services.Product.Models;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another

@@ -1,4 +1,4 @@
-﻿namespace eGift.Api.Models.Connections
+﻿namespace Egift.Api.Models.Connections
 {
     public class ConnectionString
     {

@@ -1,8 +1,8 @@
-﻿namespace Api.Extensions
+﻿namespace Egift.Api.Extensions
 {
-    using Api.Messages.Order;
-    using eGift.Services.Order.Messages;
-    using eGift.Services.Order.Models;
+    using Egift.Api.Messages.Order;
+    using Egift.Services.Order.Messages;
+    using Egift.Services.Order.Models;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another
@@ -23,7 +23,6 @@
                     SenderName = request.Data.SenderName,
                     RecipientEmail = request.Data.RecipientEmail,
                     RecipientName = request.Data.RecipientName
-
                 }
             };
 

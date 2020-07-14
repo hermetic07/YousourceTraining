@@ -1,8 +1,8 @@
-﻿namespace eGift.Api.Extensions.Injection
+﻿namespace Egift.Api.Extensions.Injection
 {
-    using eGift.Services.Order;
-    using eGift.Services.Order.Data.Factories;
-    using eGift.Services.Order.Data.Gateways;
+    using Egift.Services.Order;
+    using Egift.Services.Order.Data.Factories;
+    using Egift.Services.Order.Data.Gateways;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +13,6 @@
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderSqlCommandFactory, OrderSqlCommandFactory>();
             services.AddScoped<IOrderDataGateway, OrderDataGateway>();
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Product.Models
+﻿namespace Egift.Services.Product.Models
 {
     using System;
     using System.Runtime.Serialization;

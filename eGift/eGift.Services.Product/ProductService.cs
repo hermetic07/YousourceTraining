@@ -1,11 +1,11 @@
-﻿namespace eGift.Services.Product
+﻿namespace Egift.Services.Product
 {
     using System;
     using System.Threading.Tasks;
-    using eGift.Services.Product.Data.Gateways;
-    using eGift.Services.Product.Exceptions;
-    using eGift.Services.Product.Extensions;
-    using eGift.Services.Product.Messages;
+    using Egift.Services.Product.Data.Gateways;
+    using Egift.Services.Product.Exceptions;
+    using Egift.Services.Product.Extensions;
+    using Egift.Services.Product.Messages;
 
     public class ProductService : IProductService
     {

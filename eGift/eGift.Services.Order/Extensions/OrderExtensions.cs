@@ -1,9 +1,9 @@
-﻿namespace eGift.Services.Order.Extensions
+﻿namespace Egift.Services.Order.Extensions
 {
-    using eGift.Services.Order.Models;
-    using eGift.Services.Order.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
+    using Egift.Services.Order.Data.Entities;
+    using Egift.Services.Order.Models;
 
     /// <summary>
     /// Extension methods can be used to convert Models from One Assembly to Another
@@ -61,8 +61,7 @@
                                 SenderEmail = order.SenderEmail,
                                 RecipientEmail = order.RecipientEmail,
                                 RecipientName = order.RecipientName
-                            }
-                          ).ToList();
+                            }).ToList();
 
             return result;
         }

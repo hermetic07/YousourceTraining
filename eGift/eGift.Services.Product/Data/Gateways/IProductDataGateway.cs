@@ -1,8 +1,8 @@
-﻿namespace eGift.Services.Product.Data.Gateways
+﻿namespace Egift.Services.Product.Data.Gateways
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Services.Product.Data.Entities;
+    using Egift.Services.Product.Data.Entities;
 
     public interface IProductDataGateway
     {

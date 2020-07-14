@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Product.Data.Entities
+﻿namespace Egift.Services.Product.Data.Entities
 {
     using System;
 
@@ -11,6 +11,5 @@
         public Guid MerchantId { get; set; }
 
         public string MerchantName { get; set; }
-
     }
 }

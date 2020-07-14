@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Order.Models
+﻿namespace Egift.Services.Order.Models
 {
     using System;
     using System.Runtime.Serialization;

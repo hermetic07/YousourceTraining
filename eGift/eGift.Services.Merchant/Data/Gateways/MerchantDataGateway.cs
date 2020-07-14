@@ -1,12 +1,12 @@
-﻿namespace eGift.Services.Merchant.Data.Gateways
+﻿namespace Egift.Services.Merchant.Data.Gateways
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using eGift.Infrastructure.Helpers;
-    using eGift.Services.Merchant.Data.Entities;
-    using eGift.Services.Merchant.Data.Factories;
-    using eGift.Services.Merchant.Exceptions;
+    using Egift.Infrastructure.Helpers;
+    using Egift.Services.Merchant.Data.Entities;
+    using Egift.Services.Merchant.Data.Factories;
+    using Egift.Services.Merchant.Exceptions;
 
     public class MerchantDataGateway : IMerchantDataGateway
     {

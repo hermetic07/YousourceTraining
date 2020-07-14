@@ -1,4 +1,4 @@
-﻿namespace eGift.Infrastructure.Helpers
+﻿namespace Egift.Infrastructure.Helpers
 {
     using System;
     using System.Collections;
@@ -7,8 +7,8 @@
     using System.Data.Common;
     using System.Data.SqlClient;
     using System.Threading.Tasks;
-    using eGift.Infrastructure.Extensions;
-    using eGift.Infrastructure.Providers;
+    using Egift.Infrastructure.Extensions;
+    using Egift.Infrastructure.Providers;
 
     public class SqlHelper : ISqlHelper
     {

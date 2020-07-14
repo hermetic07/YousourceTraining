@@ -1,7 +1,7 @@
 ﻿namespace Api.Models.Products
 {
-    using Newtonsoft.Json;
     using System;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Web Models directly map to the JSON passed to the API and should contain necessary JsonProperty mappings.
@@ -21,4 +21,3 @@
         public string MerchantName { get; set; }
     }
 }
-

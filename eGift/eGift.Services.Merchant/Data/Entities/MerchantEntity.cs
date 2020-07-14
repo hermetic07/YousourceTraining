@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Merchant.Data.Entities
+﻿namespace Egift.Services.Merchant.Data.Entities
 {
     using System;
 

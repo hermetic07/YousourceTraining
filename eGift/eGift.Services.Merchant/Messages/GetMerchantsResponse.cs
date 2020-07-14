@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Merchant.Messages
+﻿namespace Egift.Services.Merchant.Messages
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -11,4 +11,3 @@
         public List<Merchant> Merchants { get; set; }
     }
 }
-

@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\eGift.Infrastructure\eGift.Infrastructure.csproj" />
+    <ProjectReference Include="..\Egift.Infrastructure\Egift.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

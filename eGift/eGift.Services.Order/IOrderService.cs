@@ -1,7 +1,7 @@
-﻿namespace eGift.Services.Order
+﻿namespace Egift.Services.Order
 {
     using System.Threading.Tasks;
-    using eGift.Services.Order.Messages;
+    using Egift.Services.Order.Messages;
 
     public interface IOrderService
     {

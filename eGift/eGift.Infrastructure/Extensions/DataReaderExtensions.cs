@@ -1,4 +1,4 @@
-﻿namespace eGift.Infrastructure.Extensions
+﻿namespace Egift.Infrastructure.Extensions
 {
     using System.Collections;
     using System.Collections.Generic;

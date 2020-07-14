@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\eGift.Services.Merchant\eGift.Services.Merchant.csproj" />
-    <ProjectReference Include="..\eGift.Services.Order\eGift.Services.Order.csproj" />
-    <ProjectReference Include="..\eGift.Services.Product\eGift.Services.Product.csproj" />
+    <ProjectReference Include="..\Egift.Services.Merchant\Egift.Services.Merchant.csproj" />
+    <ProjectReference Include="..\Egift.Services.Order\Egift.Services.Order.csproj" />
+    <ProjectReference Include="..\Egift.Services.Product\Egift.Services.Product.csproj" />
   </ItemGroup>
 
 

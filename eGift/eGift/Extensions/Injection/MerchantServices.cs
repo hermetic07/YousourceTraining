@@ -1,8 +1,8 @@
-﻿namespace eGift.Api.Extensions.Injection
+﻿namespace Egift.Api.Extensions.Injection
 {
-    using eGift.Services.Merchant;
-    using eGift.Services.Merchant.Data.Factories;
-    using eGift.Services.Merchant.Data.Gateways;
+    using Egift.Services.Merchant;
+    using Egift.Services.Merchant.Data.Factories;
+    using Egift.Services.Merchant.Data.Gateways;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +13,6 @@
             services.AddScoped<IMerchantService, MerchantService>();
             services.AddScoped<IMerchantSqlCommandFactory, MerchantSqlCommandFactory>();
             services.AddScoped<IMerchantDataGateway, MerchantDataGateway>();
-
         }
     }
 }

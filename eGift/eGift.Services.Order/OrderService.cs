@@ -1,11 +1,11 @@
-﻿namespace eGift.Services.Order
+﻿namespace Egift.Services.Order
 {
     using System;
     using System.Threading.Tasks;
-    using eGift.Services.Order.Data.Gateways;
-    using eGift.Services.Order.Exceptions;
-    using eGift.Services.Order.Extensions;
-    using eGift.Services.Order.Messages;
+    using Egift.Services.Order.Data.Gateways;
+    using Egift.Services.Order.Exceptions;
+    using Egift.Services.Order.Extensions;
+    using Egift.Services.Order.Messages;
 
     public class OrderService : IOrderService
     {

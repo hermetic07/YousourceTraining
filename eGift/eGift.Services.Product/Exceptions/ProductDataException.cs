@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Product.Exceptions
+﻿namespace Egift.Services.Product.Exceptions
 {
     using System;
 

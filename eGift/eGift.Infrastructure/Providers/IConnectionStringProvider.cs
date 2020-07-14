@@ -1,4 +1,4 @@
-﻿namespace eGift.Infrastructure.Providers
+﻿namespace Egift.Infrastructure.Providers
 {
     public interface IConnectionStringProvider
     {

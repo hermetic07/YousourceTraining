@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Merchant.Models
+﻿namespace Egift.Services.Merchant.Models
 {
     using System;
     using System.Runtime.Serialization;

@@ -1,11 +1,11 @@
-﻿namespace eGift.Services.Merchant
+﻿namespace Egift.Services.Merchant
 {
     using System;
     using System.Threading.Tasks;
-    using eGift.Services.Merchant.Data.Gateways;
-    using eGift.Services.Merchant.Exceptions;
-    using eGift.Services.Merchant.Extensions;
-    using eGift.Services.Merchant.Messages;
+    using Egift.Services.Merchant.Data.Gateways;
+    using Egift.Services.Merchant.Exceptions;
+    using Egift.Services.Merchant.Extensions;
+    using Egift.Services.Merchant.Messages;
 
     public class MerchantService : IMerchantService
     {

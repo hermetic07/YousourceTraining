@@ -10,6 +10,8 @@ import { ViewProductComponent } from './product/view-product/view-product.compon
 import { ListOrderComponent } from './order/list-order/list-order.component';
 import { CreateOrderComponent } from './order/create-order/create-order.component';
 import { ViewOrderComponent } from './order/view-order/view-order.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MerchantApiService} from "./services/api.merchant.service";
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { ViewOrderComponent } from './order/view-order/view-order.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MerchantApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

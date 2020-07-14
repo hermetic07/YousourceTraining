@@ -1,8 +1,8 @@
-﻿namespace eGift.Services.Merchant.Data.Factories
+﻿namespace Egift.Services.Merchant.Data.Factories
 {
     using System.Data;
     using System.Data.SqlClient;
-    using eGift.Services.Merchant.Data.Entities;
+    using Egift.Services.Merchant.Data.Entities;
 
     /// <summary>
     /// Sql Command Factories remove responsibility from the Data Gateways by creating SqlCommands to be executed.

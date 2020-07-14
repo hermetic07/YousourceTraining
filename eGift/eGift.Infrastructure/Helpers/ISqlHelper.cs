@@ -1,4 +1,4 @@
-﻿namespace eGift.Infrastructure.Helpers
+﻿namespace Egift.Infrastructure.Helpers
 {
     using System.Collections.Generic;
     using System.Data.SqlClient;
@@ -13,4 +13,3 @@
         Task<T> ReadAsync<T>(SqlCommand command) where T : class;
     }
 }
-

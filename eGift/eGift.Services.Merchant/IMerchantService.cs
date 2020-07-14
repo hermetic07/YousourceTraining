@@ -1,7 +1,7 @@
-﻿namespace eGift.Services.Merchant
+﻿namespace Egift.Services.Merchant
 {
     using System.Threading.Tasks;
-    using eGift.Services.Merchant.Messages;
+    using Egift.Services.Merchant.Messages;
 
     public interface IMerchantService
     {

@@ -1,4 +1,4 @@
-﻿namespace eGift.Services.Order.Messages
+﻿namespace Egift.Services.Order.Messages
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -11,4 +11,3 @@
         public List<Order> Order { get; set; }
     }
 }
-

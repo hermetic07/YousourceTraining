@@ -1,7 +1,7 @@
-﻿namespace eGift.Services.Order.Messages
+﻿namespace Egift.Services.Order.Messages
 {
     using System.Runtime.Serialization;
-    using eGift.Services.Order.Models;
+    using Egift.Services.Order.Models;
 
     [DataContract]
     public class GetOrderRequest
