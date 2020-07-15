@@ -24,13 +24,15 @@
             return result;
         }
 
-        public SqlCommand CreateGetProductsCommand()
+        public SqlCommand CreateGetProductsCommand(ProductEntity product)
         {
             var result = new SqlCommand("sp_GetProducts")
             {
                 CommandTimeout = 30,
                 CommandType = CommandType.StoredProcedure
             };
+
+            result.Parameters.AddWithValue("@id", product.MerchantId);
 
             return result;
         }
@@ -43,7 +45,7 @@
                 CommandType = CommandType.StoredProcedure
             };
 
-            result.Parameters.AddWithValue("@id", product.MerchantId);
+            result.Parameters.AddWithValue("@id", product.ProductId);
 
             return result;
         }

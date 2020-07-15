@@ -23,7 +23,9 @@
                 SenderName = order.SenderName,
                 SenderEmail = order.SenderEmail,
                 RecipientEmail = order.RecipientEmail,
-                RecipientName = order.RecipientName
+                RecipientName = order.RecipientName,
+                OrderQuantity = order.OrderQuantity,
+                OrderTotal = order.OrderTotal
             };
 
             return result;

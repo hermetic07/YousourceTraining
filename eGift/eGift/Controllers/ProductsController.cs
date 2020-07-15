@@ -32,9 +32,10 @@
             return this.StatusCode(result.Code);
         }
 
-        public async Task<IActionResult> GetProducts()
+        [HttpPost]
+        public async Task<IActionResult> GetProducts([FromBody] GetProductWebRequest webRequest)
         {
-            var result = await this.service.GetProductsAsync();
+            var result = await this.service.GetProductsAsync(webRequest.AsRequest());
             return this.Ok(result);
         }
 

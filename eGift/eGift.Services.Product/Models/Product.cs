@@ -16,5 +16,8 @@
 
         [DataMember]
         public string MerchantName { get; set; }
+
+        [DataMember]
+        public decimal ProductPrice { get; set; }
     }
 }

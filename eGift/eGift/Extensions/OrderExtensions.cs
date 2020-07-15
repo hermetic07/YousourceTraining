@@ -22,7 +22,9 @@
                     SenderEmail = request.Data.SenderEmail,
                     SenderName = request.Data.SenderName,
                     RecipientEmail = request.Data.RecipientEmail,
-                    RecipientName = request.Data.RecipientName
+                    RecipientName = request.Data.RecipientName,
+                    OrderQuantity = request.Data.OrderQuantity,
+                    OrderTotal = request.Data.OrderTotal
                 }
             };
 

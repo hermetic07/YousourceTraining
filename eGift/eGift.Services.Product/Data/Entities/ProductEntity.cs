@@ -11,5 +11,7 @@
         public Guid MerchantId { get; set; }
 
         public string MerchantName { get; set; }
+
+        public decimal ProductPrice { get; set; }
     }
 }

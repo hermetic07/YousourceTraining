@@ -1,1 +1,15 @@
-<p>list-product works!</p>
+<h2>{{ product.merchantName }} Products</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>{{ product.productName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

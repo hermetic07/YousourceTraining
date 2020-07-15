@@ -8,7 +8,7 @@
     {
         Task InsertProductAsync(ProductEntity product);
 
-        Task<List<ProductEntity>> GetProductsAsync();
+        Task<List<ProductEntity>> GetProductsAsync(ProductEntity product);
 
         Task<ProductEntity> GetProductAsync(ProductEntity product);
     }

@@ -57,13 +57,13 @@
             return response;
         }
 
-        public async Task<GetProductsResponse> GetProductsAsync()
+        public async Task<GetProductsResponse> GetProductsAsync(GetProductRequest request)
         {
             var response = new GetProductsResponse { Code = 200 };
 
             try
             {
-                var result = await this.gateway.GetProductsAsync();
+                var result = await this.gateway.GetProductsAsync(request.Product.AsEntity());
 
                 response.Products = result.AsResponseList();
             }

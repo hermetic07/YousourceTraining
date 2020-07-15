@@ -10,8 +10,7 @@
           <tbody>
             <tr *ngFor="let merchant of merchants">
               <td>{{ merchant.merchantName }}</td>
-              <td><a class="btn btn-primary">View</a></td>
-              <!-- <td><a [routerLink]="['/edit', product._id]" class="btn btn-primary">View</a></td> -->
+              <td><a [routerLink]="['/list-product', merchant.merchantName, merchant.merchantId]" class="btn btn-primary">View Products</a></td>
           </tr>
           </tbody>
         </table>

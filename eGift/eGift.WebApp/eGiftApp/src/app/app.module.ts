@@ -12,6 +12,7 @@ import { CreateOrderComponent } from './order/create-order/create-order.componen
 import { ViewOrderComponent } from './order/view-order/view-order.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MerchantApiService} from "./services/api.merchant.service";
+import {ProductApiService} from "./services/api.product.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {MerchantApiService} from "./services/api.merchant.service";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [MerchantApiService],
+  providers: [MerchantApiService,ProductApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

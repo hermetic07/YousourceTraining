@@ -7,7 +7,7 @@
     {
         SqlCommand CreateInsertProductCommand(ProductEntity product);
 
-        SqlCommand CreateGetProductsCommand();
+        SqlCommand CreateGetProductsCommand(ProductEntity product);
 
         SqlCommand CreateGetProductCommand(ProductEntity product);
     }

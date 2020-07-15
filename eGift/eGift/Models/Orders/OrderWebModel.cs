@@ -34,5 +34,11 @@
 
         [JsonProperty("recipientEmail")]
         public string RecipientEmail { get; set; }
+
+        [JsonProperty("orderQuantity")]
+        public int OrderQuantity { get; set; }
+
+        [JsonProperty("oirderTotal")]
+        public decimal OrderTotal { get; set; }
     }
 }

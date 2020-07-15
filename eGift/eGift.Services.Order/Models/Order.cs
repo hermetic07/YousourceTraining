@@ -28,5 +28,11 @@
 
         [DataMember]
         public string RecipientEmail { get; set; }
+
+        [DataMember]
+        public int OrderQuantity { get; set; }
+
+        [DataMember]
+        public decimal OrderTotal { get; set; }
     }
 }

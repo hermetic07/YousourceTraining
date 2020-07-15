@@ -13,5 +13,8 @@
 
         [JsonProperty("merchantId")]
         public Guid MerchantId { get; set; }
+
+        [JsonProperty("productPrice")]
+        public Guid ProductPrice { get; set; }
     }
 }

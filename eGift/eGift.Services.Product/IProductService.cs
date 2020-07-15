@@ -7,7 +7,7 @@
     {
         Task<CreateProductResponse> CreateProductAsync(CreateProductRequest request);
 
-        Task<GetProductsResponse> GetProductsAsync();
+        Task<GetProductsResponse> GetProductsAsync(GetProductRequest request);
 
         Task<GetProductResponse> GetProductAsync(GetProductRequest request);
     }

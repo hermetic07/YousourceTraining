@@ -32,7 +32,8 @@
             {
                 Product = new Product
                 {
-                    ProductId = request.Data.ProductId
+                    ProductId = request.Data.ProductId,
+                    MerchantId = request.Data.MerchantId
                 }
             };
 

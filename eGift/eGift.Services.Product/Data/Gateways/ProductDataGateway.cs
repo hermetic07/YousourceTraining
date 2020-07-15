@@ -36,11 +36,11 @@
             }
         }
 
-        public async Task<List<ProductEntity>> GetProductsAsync()
+        public async Task<List<ProductEntity>> GetProductsAsync(ProductEntity product)
         {
             try
             {
-                var command = this.factory.CreateGetProductsCommand();
+                var command = this.factory.CreateGetProductsCommand(product);
                 var result = await this.helper.ReadAsListAsync<ProductEntity>(command);
 
                 return result;

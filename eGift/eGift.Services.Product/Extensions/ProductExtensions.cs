@@ -32,7 +32,8 @@
                 MerchantId = product.MerchantId,
                 MerchantName = product.MerchantName,
                 ProductId = product.ProductId,
-                ProductName = product.ProductName
+                ProductName = product.ProductName,
+                ProductPrice = product.ProductPrice
             };
 
             return result;
@@ -46,7 +47,8 @@
                               MerchantId = product.MerchantId,
                               MerchantName = product.MerchantName,
                               ProductId = product.ProductId,
-                              ProductName = product.ProductName
+                              ProductName = product.ProductName,
+                              ProductPrice = product.ProductPrice
                           }).ToList();
 
             return result;

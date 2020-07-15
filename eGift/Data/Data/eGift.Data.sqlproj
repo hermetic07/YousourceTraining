@@ -60,6 +60,7 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="StoredProcedures" />
+    <Folder Include="Post Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Merchants.sql" />
@@ -74,5 +75,8 @@
   <ItemGroup>
     <Build Include="Tables\Orders.sql" />
     <Build Include="Tables\Products.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post Deployment\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {ProductApiService} from "../../services/api.product.service";
+import { Product } from 'src/app/models/product.model';
+import { ProductsRequest } from 'src/app/models/api.products.request';
 
 @Component({
   selector: 'app-list-product',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  constructor() { }
+  product: Product;
+  products: any;
+  productWebRequest: ProductsRequest;
+  merchantId: string;
+  
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: ProductApiService) { 
+
+    this.product = new Product;
+    this.productWebRequest = new ProductsRequest;
+  }
 
   ngOnInit(): void {
+    this.product.merchantId = this.route.snapshot.paramMap.get('id');
+    this.product.merchantName = this.route.snapshot.paramMap.get('merchant');
+    this.productWebRequest.data = this.product;
+
+    this.apiService.getProducts(this.productWebRequest).subscribe( data => {
+      this.products = data.products;
+    });
   }
 
 }
