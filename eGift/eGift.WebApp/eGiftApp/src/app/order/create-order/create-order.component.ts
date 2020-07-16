@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {OrderApiService} from "../../services/api.order.service";
+import { OrdersResponse } from 'src/app/models/api.orders.response';
+import { OrdersRequest } from 'src/app/models/api.orders.request';
+import {OrderCheckout} from "src/app/models/orderCheckout.model";
 
 @Component({
   selector: 'app-create-order',
@@ -7,9 +12,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateOrderComponent implements OnInit {
 
-  constructor() { }
+  productPrice: number;
+  productName: string;
+  orderCheckout = new OrderCheckout(this.route.snapshot.paramMap.get('id'),'','','','',0,0);
+  orderRequest: OrdersRequest;
+  orderResponse = new OrdersResponse();
+  loading = false;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: OrderApiService) { 
+
   }
 
+  ngOnInit(): void {
+    this.productName = this.route.snapshot.paramMap.get('productName');
+    this.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
+  }
+
+  onSubmit(){
+    
+    this.loading = true;
+    this.orderRequest = new OrdersRequest();
+    this.orderRequest.data = this.orderCheckout;
+
+    this.apiService.postOrders(this.orderRequest).subscribe( data => {
+      this.loading = false;
+    },
+    error => {
+      console.log(error);
+    });
+  }
+
+  calculateTotal(){
+    this.orderCheckout.orderTotal = this.productPrice * this.orderCheckout.orderQuantity;
+  }
 }

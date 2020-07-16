@@ -8,7 +8,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let product of products">
-              <td>{{ product.productName }}</td>
+              <td><a [routerLink]="['/order-checkout/', product.productName,product.productPrice, product.productId]">{{ product.productName }}</a></td>
             </tr>
           </tbody>
         </table>

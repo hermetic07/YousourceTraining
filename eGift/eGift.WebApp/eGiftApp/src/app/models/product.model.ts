@@ -4,5 +4,6 @@ export class Product {
     merchantName: string;
     productId: string;
     productName: string;
+    productPrice: number;
     
   }

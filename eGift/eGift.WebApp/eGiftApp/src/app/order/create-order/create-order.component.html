@@ -1,1 +1,47 @@
-<p>create-order works!</p>
+<h2>Order Checkout Form</h2>
+<form class="col-sm-6" #orderCheckoutForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="productName">Product</label>
+        <input type="text" class="form-control" id="productName" [value]="productName" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="senderName">Sender Name</label>
+        <input type="text" [(ngModel)]="orderCheckout.senderName" name="senderName" class="form-control" id="senderName" #senderName="ngModel" required>
+        <div [hidden]="senderName.valid || senderName.pristine" class="alert alert-danger">
+            Sender Name is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="senderEmail">Sender Email</label>
+        <input type="email" [(ngModel)]="orderCheckout.senderEmail" name="senderEmail" class="form-control" id="senderEmail" required>
+    </div>
+
+    <div class="form-group">
+        <label for="recipientName">Recipient Name</label>
+        <input type="text" [(ngModel)]="orderCheckout.recipientName" name="recipientName" class="form-control" id="recipientName" required>
+    </div>
+
+    <div class="form-group">
+        <label for="recipientEmail">Recipient Email</label>
+        <input type="email" [(ngModel)]="orderCheckout.recipientEmail" name="recipientEmail" class="form-control" id="recipientEmail" required>
+    </div>
+
+    <div class="form-group">
+        <label for="orderQuantity">Price</label>
+        <input type="number" [(ngModel)]="productPrice" name="productPrice" class="form-control" id="productPrice" disabled>
+    </div>
+
+    <div class="form-group">
+        <label for="orderQuantity">Quantity</label>
+        <input type="number" [(ngModel)]="orderCheckout.orderQuantity" (change)="calculateTotal()" name="orderQuantity" class="form-control" id="orderQuantity" [min]="1" required>
+    </div>
+
+    <div class="form-group">
+        <label for="orderTotal">Total</label>
+        <input type="number" [(ngModel)]="orderCheckout.orderTotal" name="orderTotal" class="form-control" id="orderTotal" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-success buttonload" [disabled]="!orderCheckoutForm.valid || loading" ><i class="fa fa-refresh fa-spin" [hidden]="!loading"></i> Submit</button>
+</form>

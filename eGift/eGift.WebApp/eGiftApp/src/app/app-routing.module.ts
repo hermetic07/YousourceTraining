@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ListMerchantComponent} from "./merchant/list-merchant/list-merchant.component";
-import {ViewMerchantComponent} from "./merchant/view-merchant/view-merchant.component";
 import {ListProductComponent} from "./product/list-product/list-product.component";
-import {ViewProductComponent} from "./product/view-product/view-product.component";
+import {CreateOrderComponent} from "./order/create-order/create-order.component";
 
 const routes: Routes = [
   { path: 'list-merchant', component: ListMerchantComponent },
-  { path: 'view-merchant', component: ViewMerchantComponent },
   { path: 'list-product/:merchant/:id', component: ListProductComponent },
-  { path: 'view-product', component: ViewProductComponent },
+  { path: 'order-checkout/:productName/:productPrice/:id', component: CreateOrderComponent },
   { path : '', component : ListMerchantComponent}
 ];
 

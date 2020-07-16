@@ -7,5 +7,6 @@ export class Order {
     senderEmail: string;
     recipientName: string;
     recipientEmail: string;
-    
+    orderQuantity: number;
+    orderTotal: number;
   }

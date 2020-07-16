@@ -14,15 +14,6 @@
         [JsonProperty("productId")]
         public Guid ProductId { get; set; }
 
-        [JsonProperty("productName")]
-        public string ProductName { get; set; }
-
-        [JsonProperty("merchantName")]
-        public string MerchantName { get; set; }
-
-        [JsonProperty("merchantId")]
-        public Guid MerchantId { get; set; }
-
         [JsonProperty("senderName")]
         public string SenderName { get; set; }
 
@@ -38,7 +29,7 @@
         [JsonProperty("orderQuantity")]
         public int OrderQuantity { get; set; }
 
-        [JsonProperty("oirderTotal")]
+        [JsonProperty("orderTotal")]
         public decimal OrderTotal { get; set; }
     }
 }

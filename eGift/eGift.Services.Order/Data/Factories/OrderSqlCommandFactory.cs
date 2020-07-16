@@ -23,6 +23,8 @@
             result.Parameters.AddWithValue("@senderEmail", order.SenderEmail);
             result.Parameters.AddWithValue("@recipientName", order.RecipientName);
             result.Parameters.AddWithValue("@recipientEmail", order.RecipientEmail);
+            result.Parameters.AddWithValue("@orderQuantity", order.OrderQuantity);
+            result.Parameters.AddWithValue("@orderTotal", order.OrderTotal);
 
             return result;
         }
