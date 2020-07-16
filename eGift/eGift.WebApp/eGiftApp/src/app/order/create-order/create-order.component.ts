@@ -4,6 +4,7 @@ import {OrderApiService} from "../../services/api.order.service";
 import { OrdersResponse } from 'src/app/models/api.orders.response';
 import { OrdersRequest } from 'src/app/models/api.orders.request';
 import {OrderCheckout} from "src/app/models/orderCheckout.model";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-order',
@@ -28,7 +29,7 @@ export class CreateOrderComponent implements OnInit {
     this.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
   }
 
-  onSubmit(){
+  onSubmit(orderCheckoutForm: NgForm){
     
     this.loading = true;
     this.orderRequest = new OrdersRequest();
@@ -36,6 +37,7 @@ export class CreateOrderComponent implements OnInit {
 
     this.apiService.postOrders(this.orderRequest).subscribe( data => {
       this.loading = false;
+      orderCheckoutForm.reset();
     },
     error => {
       console.log(error);
