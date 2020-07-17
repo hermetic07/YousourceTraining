@@ -13,15 +13,13 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/list-merchant']">
-              <span data-feather="home"></span>
+            <a class="nav-link" [routerLink]="['/list-merchant']">
               Merchants <span class="sr-only"></span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file"></span>
-              Orders
+            <a class="nav-link" [routerLink]="['/list-order']">
+              Orders <span class="sr-only"></span>
             </a>
           </li>
         </ul>

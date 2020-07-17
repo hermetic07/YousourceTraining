@@ -7,10 +7,16 @@
     {
         [DataMember]
         public Guid OrderId { get; set; }
+
         [DataMember]
         public Guid ProductId { get; set; }
+
         [DataMember]
         public string ProductName { get; set; }
+
+        [DataMember]
+        public decimal ProductPrice { get; set; }
+
         [DataMember]
         public string MerchantName { get; set; }
 
@@ -33,6 +39,9 @@
         public int OrderQuantity { get; set; }
 
         [DataMember]
-        public decimal OrderTotal { get; set; }
+        public string OrderMessage { get; set; }
+
+        [DataMember]
+        public DateTime OrderDate { get; set; }
     }
 }

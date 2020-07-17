@@ -8,6 +8,6 @@
     public class GetOrdersResponse : Response
     {
         [DataMember]
-        public List<Order> Order { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

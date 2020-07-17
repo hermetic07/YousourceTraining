@@ -5,8 +5,6 @@
 
     public interface IProductService
     {
-        Task<CreateProductResponse> CreateProductAsync(CreateProductRequest request);
-
         Task<GetProductsResponse> GetProductsAsync(GetProductRequest request);
 
         Task<GetProductResponse> GetProductAsync(GetProductRequest request);

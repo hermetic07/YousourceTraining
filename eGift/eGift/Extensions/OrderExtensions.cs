@@ -24,7 +24,7 @@
                     RecipientEmail = request.Data.RecipientEmail,
                     RecipientName = request.Data.RecipientName,
                     OrderQuantity = request.Data.OrderQuantity,
-                    OrderTotal = request.Data.OrderTotal
+                    OrderMessage = request.Data.OrderMessage
                 }
             };
 

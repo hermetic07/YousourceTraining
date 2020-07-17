@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from "rxjs/index";
-import {ProductsResponse} from "../models/api.products.response";
-import {ProductsRequest} from "../models/api.products.request";
+import {ProductsResponse} from "../models/Products/api.products.response";
+import {ProductsRequest} from "../models/Products/api.products.request";
 
 @Injectable()
 export class ProductApiService {

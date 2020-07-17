@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MerchantApiService} from "../../services/api.merchant.service";
+import {MerchantsResponse} from "../../models/Merchants/api.merchants.response";
 
 @Component({
   selector: 'app-list-merchant',
@@ -9,14 +10,14 @@ import {MerchantApiService} from "../../services/api.merchant.service";
 })
 export class ListMerchantComponent implements OnInit {
 
-  merchants: any;
+  merchants = new MerchantsResponse();
 
   constructor(private router: Router, private apiService: MerchantApiService) { }
 
   ngOnInit(): void {
     
     this.apiService.getMerchants().subscribe( data => {
-      this.merchants = data.merchants;
+      this.merchants = data;
     });
 
   }

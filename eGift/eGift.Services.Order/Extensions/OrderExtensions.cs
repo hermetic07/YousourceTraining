@@ -25,7 +25,7 @@
                 RecipientEmail = order.RecipientEmail,
                 RecipientName = order.RecipientName,
                 OrderQuantity = order.OrderQuantity,
-                OrderTotal = order.OrderTotal
+                OrderMessage = order.OrderMessage,
             };
 
             return result;
@@ -38,12 +38,16 @@
                 OrderId = order.OrderId,
                 ProductId = order.ProductId,
                 ProductName = order.ProductName,
+                ProductPrice = order.ProductPrice,
                 MerchantId = order.MerchantId,
                 MerchantName = order.MerchantName,
                 SenderName = order.SenderName,
                 SenderEmail = order.SenderEmail,
                 RecipientEmail = order.RecipientEmail,
-                RecipientName = order.RecipientName
+                RecipientName = order.RecipientName,
+                OrderQuantity = order.OrderQuantity,
+                OrderMessage = order.OrderMessage,
+                OrderDate = order.OrderDate
             };
 
             return result;
@@ -57,12 +61,16 @@
                                 OrderId = order.OrderId,
                                 ProductId = order.ProductId,
                                 ProductName = order.ProductName,
+                                ProductPrice = order.ProductPrice,
                                 MerchantId = order.MerchantId,
                                 MerchantName = order.MerchantName,
                                 SenderName = order.SenderName,
                                 SenderEmail = order.SenderEmail,
                                 RecipientEmail = order.RecipientEmail,
-                                RecipientName = order.RecipientName
+                                RecipientName = order.RecipientName,
+                                OrderQuantity = order.OrderQuantity,
+                                OrderMessage = order.OrderMessage,
+                                OrderDate = order.OrderDate
                             }).ToList();
 
             return result;

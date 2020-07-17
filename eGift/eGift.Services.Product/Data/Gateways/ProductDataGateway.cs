@@ -7,33 +7,19 @@
     using Egift.Services.Product.Data.Entities;
     using Egift.Services.Product.Data.Factories;
     using Egift.Services.Product.Exceptions;
+    using Microsoft.Extensions.Logging;
 
     public class ProductDataGateway : IProductDataGateway
     {
         private readonly ISqlHelper helper;
         private readonly IProductSqlCommandFactory factory;
+        private readonly ILogger<ProductDataException> logger;
 
-        public ProductDataGateway(IProductSqlCommandFactory factory, ISqlHelper helper)
+        public ProductDataGateway(IProductSqlCommandFactory factory, ISqlHelper helper, ILogger<ProductDataException> logger)
         {
             this.factory = factory;
             this.helper = helper;
-        }
-
-        public async Task InsertProductAsync(ProductEntity product)
-        {
-            try
-            {
-                var command = this.factory.CreateInsertProductCommand(product);
-                await this.helper.ExecuteAsync(command);
-            }
-            catch (Exception ex)
-            {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
-                throw new ProductDataException(ex);
-            }
+            this.logger = logger;
         }
 
         public async Task<List<ProductEntity>> GetProductsAsync(ProductEntity product)
@@ -47,10 +33,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new ProductDataException(ex);
             }
         }
@@ -66,10 +49,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new ProductDataException(ex);
             }
         }

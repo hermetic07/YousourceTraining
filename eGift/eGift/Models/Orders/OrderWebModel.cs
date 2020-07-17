@@ -29,7 +29,7 @@
         [JsonProperty("orderQuantity")]
         public int OrderQuantity { get; set; }
 
-        [JsonProperty("orderTotal")]
-        public decimal OrderTotal { get; set; }
+        [JsonProperty("orderMessage")]
+        public string OrderMessage { get; set; }
     }
 }

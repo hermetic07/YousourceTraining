@@ -6,7 +6,8 @@
     [RecipientName]  NVARCHAR (100) NULL,
     [RecipientEmail] NVARCHAR (100) NULL,
     [OrderQuantity] INT NULL, 
-    [OrderTotal] MONEY NULL, 
+    [OrderDate] DATETIME NULL DEFAULT GETDATE(), 
+    [OrderMessage] TEXT NULL, 
     CONSTRAINT [FK_Orders_Orders] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Products] ([ProductId])
 );
 

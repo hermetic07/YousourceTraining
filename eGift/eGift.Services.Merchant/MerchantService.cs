@@ -6,32 +6,17 @@
     using Egift.Services.Merchant.Exceptions;
     using Egift.Services.Merchant.Extensions;
     using Egift.Services.Merchant.Messages;
+    using Microsoft.Extensions.Logging;
 
     public class MerchantService : IMerchantService
     {
         private readonly IMerchantDataGateway gateway;
+        private readonly ILogger<MerchantServiceException> logger;
 
-        public MerchantService(IMerchantDataGateway gateway)
+        public MerchantService(IMerchantDataGateway gateway, ILogger<MerchantServiceException> logger)
         {
             this.gateway = gateway;
-        }
-
-        public async Task<GetMerchantResponse> GetMerchantAsync(GetMerchantRequest request)
-        {
-            var response = new GetMerchantResponse { Code = 200 };
-
-            try
-            {
-                var result = await this.gateway.GetMerchantAsync(request.Merchant.AsEntity());
-
-                response.Merchant = result.AsResponse();
-            }
-            catch (Exception ex)
-            {
-                throw new MerchantServiceException(ex);
-            }
-
-            return response;
+            this.logger = logger;
         }
 
         public async Task<GetMerchantsResponse> GetMerchantsAsync()
@@ -46,7 +31,8 @@
             }
             catch (Exception ex)
             {
-                throw new MerchantServiceException(ex);
+                this.logger.LogError(ex.Message);
+                response.Code = 500;
             }
 
             return response;

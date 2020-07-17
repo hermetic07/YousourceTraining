@@ -26,12 +26,6 @@
             this.service = service;
         }
 
-        public async Task<IActionResult> CreateProduct(CreateProductWebRequest webRequest)
-        {
-            var result = await this.service.CreateProductAsync(webRequest.AsRequest());
-            return this.StatusCode(result.Code);
-        }
-
         [HttpPost]
         public async Task<IActionResult> GetProducts([FromBody] GetProductWebRequest webRequest)
         {

@@ -6,14 +6,17 @@
     using Egift.Services.Order.Exceptions;
     using Egift.Services.Order.Extensions;
     using Egift.Services.Order.Messages;
+    using Microsoft.Extensions.Logging;
 
     public class OrderService : IOrderService
     {
         private readonly IOrderDataGateway gateway;
+        private readonly ILogger<OrderServiceException> logger;
 
-        public OrderService(IOrderDataGateway gateway)
+        public OrderService(IOrderDataGateway gateway, ILogger<OrderServiceException> logger)
         {
             this.gateway = gateway;
+            this.logger = logger;
         }
 
         public async Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request)
@@ -22,18 +25,12 @@
 
             try
             {
-                //// Do complex stuff here. You may call other design patterns-inspired classes here.
-                //// For the most basic stuff, the service class depends on Data Gateways to perform CRUD operations such as this
-
                 await this.gateway.InsertOrderAsync(request.Order.AsEntity());
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Service Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
-                throw new OrderServiceException(ex);
+                this.logger.LogError(ex.Message);
+                response.Code = 500;
             }
 
             return response;
@@ -51,7 +48,8 @@
             }
             catch (Exception ex)
             {
-                throw new OrderServiceException(ex);
+                this.logger.LogError(ex.Message);
+                response.Code = 500;
             }
 
             return response;
@@ -65,11 +63,12 @@
             {
                 var result = await this.gateway.GetOrdersAsync();
 
-                response.Order = result.AsResponseList();
+                response.Orders = result.AsResponseList();
             }
             catch (Exception ex)
             {
-                throw new OrderServiceException(ex);
+                this.logger.LogError(ex.Message);
+                response.Code = 500;
             }
 
             return response;

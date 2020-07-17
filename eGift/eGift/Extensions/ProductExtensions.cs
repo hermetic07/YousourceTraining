@@ -12,20 +12,6 @@
     /// </summary>
     public static class ProductExtensions
     {
-        public static CreateProductRequest AsRequest(this CreateProductWebRequest request)
-        {
-            var result = new CreateProductRequest
-            {
-                Product = new Product
-                {
-                    MerchantId = request.Data.MerchantId,
-                    ProductName = request.Data.ProductName
-                }
-            };
-
-            return result;
-        }
-
         public static GetProductRequest AsRequest(this GetProductWebRequest request)
         {
             var result = new GetProductRequest

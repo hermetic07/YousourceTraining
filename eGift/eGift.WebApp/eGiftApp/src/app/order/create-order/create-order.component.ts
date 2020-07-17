@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {OrderApiService} from "../../services/api.order.service";
-import { OrdersResponse } from 'src/app/models/api.orders.response';
-import { OrdersRequest } from 'src/app/models/api.orders.request';
-import {OrderCheckout} from "src/app/models/orderCheckout.model";
+import { OrdersResponse } from 'src/app/models/Orders/api.orders.response';
+import { OrdersRequest } from 'src/app/models/Orders/api.orders.request';
+import {Order} from "src/app/models/Orders/order.model";
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-order',
@@ -15,16 +16,18 @@ export class CreateOrderComponent implements OnInit {
 
   productPrice: number;
   productName: string;
-  orderCheckout = new OrderCheckout(this.route.snapshot.paramMap.get('id'),'','','','',0,0);
+  orderTotal = 0;
+  orderCheckout = new Order();
   orderRequest: OrdersRequest;
   orderResponse = new OrdersResponse();
   loading = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private apiService: OrderApiService) { 
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: OrderApiService, private toastr: ToastrService) { 
 
   }
 
   ngOnInit(): void {
+    this.orderCheckout.productId = this.route.snapshot.paramMap.get('id');
     this.productName = this.route.snapshot.paramMap.get('productName');
     this.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
   }
@@ -38,13 +41,14 @@ export class CreateOrderComponent implements OnInit {
     this.apiService.postOrders(this.orderRequest).subscribe( data => {
       this.loading = false;
       orderCheckoutForm.reset();
+      this.toastr.success('Order created', 'Success!');
     },
     error => {
-      console.log(error);
+      this.toastr.error(error,"Error");
     });
   }
 
   calculateTotal(){
-    this.orderCheckout.orderTotal = this.productPrice * this.orderCheckout.orderQuantity;
+    this.orderTotal = this.productPrice * this.orderCheckout.orderQuantity;
   }
 }

@@ -6,7 +6,5 @@
     public interface IMerchantService
     {
         Task<GetMerchantsResponse> GetMerchantsAsync();
-
-        Task<GetMerchantResponse> GetMerchantAsync(GetMerchantRequest request);
     }
 }

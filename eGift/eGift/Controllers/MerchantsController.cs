@@ -24,13 +24,5 @@
             var result = await this.service.GetMerchantsAsync();
             return this.Ok(result);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> GetMerchant([FromBody]GetMerchantWebRequest webRequest)
-        {
-            var result = await this.service.GetMerchantAsync(webRequest.AsRequest());
-
-            return this.Ok(result);
-        }
     }
 }

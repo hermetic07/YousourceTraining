@@ -7,16 +7,19 @@
     using Egift.Services.Merchant.Data.Entities;
     using Egift.Services.Merchant.Data.Factories;
     using Egift.Services.Merchant.Exceptions;
+    using Microsoft.Extensions.Logging;
 
     public class MerchantDataGateway : IMerchantDataGateway
     {
         private readonly ISqlHelper helper;
         private readonly IMerchantSqlCommandFactory factory;
+        private readonly ILogger<MerchantDataException> logger;
 
-        public MerchantDataGateway(IMerchantSqlCommandFactory factory, ISqlHelper helper)
+        public MerchantDataGateway(IMerchantSqlCommandFactory factory, ISqlHelper helper, ILogger<MerchantDataException> logger)
         {
             this.factory = factory;
             this.helper = helper;
+            this.logger = logger;
         }
 
         public async Task<List<MerchantEntity>> GetMerchantsAsync()
@@ -30,10 +33,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new MerchantDataException(ex);
             }
         }
@@ -49,10 +49,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new MerchantDataException(ex);
             }
         }

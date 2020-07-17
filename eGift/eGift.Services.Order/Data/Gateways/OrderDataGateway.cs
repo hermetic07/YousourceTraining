@@ -7,16 +7,19 @@
     using Egift.Services.Order.Data.Entities;
     using Egift.Services.Order.Data.Factories;
     using Egift.Services.Order.Exceptions;
+    using Microsoft.Extensions.Logging;
 
     public class OrderDataGateway : IOrderDataGateway
     {
         private readonly ISqlHelper helper;
         private readonly IOrderSqlCommandFactory factory;
+        private readonly ILogger<OrderDataException> logger;
 
-        public OrderDataGateway(IOrderSqlCommandFactory factory, ISqlHelper helper)
+        public OrderDataGateway(IOrderSqlCommandFactory factory, ISqlHelper helper, ILogger<OrderDataException> logger)
         {
             this.factory = factory;
             this.helper = helper;
+            this.logger = logger;
         }
 
         public async Task InsertOrderAsync(OrderEntity order)
@@ -28,10 +31,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new OrderDataException(ex);
             }
         }
@@ -47,10 +47,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new OrderDataException(ex);
             }
         }
@@ -66,10 +63,7 @@
             }
             catch (Exception ex)
             {
-                //// You may catch other "expected" exceptions in a different catch block; You may also set Error Codes to your response respectively
-                //// Always catch unexpected exceptions and wrap them as a Layer exception - Data Exception in this case
-                //// Log your errors e.g. to ApplicationInsights
-                //// this.logger.Log(ex);
+                this.logger.LogError(ex.Message);
                 throw new OrderDataException(ex);
             }
         }

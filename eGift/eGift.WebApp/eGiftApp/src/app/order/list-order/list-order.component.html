@@ -1,1 +1,27 @@
-<p>list-order works!</p>
+<h2>Orders</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Recipient</th>
+                <th>Product</th>
+                <th>Merchant</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Date Purchased</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders.orders">
+                <td>{{ order.senderName }}</td>
+                <td>{{ order.recipientName }}</td>
+                <td>{{ order.productName }}</td>
+                <td>{{ order.merchantName }}</td>
+                <td>{{ order.productPrice }}</td>
+                <td>{{ order.orderQuantity }}</td>
+                <td>{{ order.orderDate | date : 'MM/dd/yyyy' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

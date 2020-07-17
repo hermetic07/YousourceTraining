@@ -5,8 +5,8 @@
 	@recipientName NVARCHAR(500),
 	@recipientEmail NVARCHAR(500),
 	@orderQuantity INT,
-	@orderTotal MONEY
+	@orderMessage TEXT
 AS
-	INSERT INTO [dbo].[Orders] (ProductId,SenderName,SenderEmail,RecipientName,RecipientEmail,OrderQuantity,OrderTotal)
-	VALUES(@productId,@senderName,@senderEmail,@recipientName,@recipientEmail,@orderQuantity,@orderTotal)
+	INSERT INTO [dbo].[Orders] (ProductId,SenderName,SenderEmail,RecipientName,RecipientEmail,OrderQuantity,OrderMessage)
+	VALUES(@productId,@senderName,@senderEmail,@recipientName,@recipientEmail,@orderQuantity,@orderMessage)
 RETURN 0

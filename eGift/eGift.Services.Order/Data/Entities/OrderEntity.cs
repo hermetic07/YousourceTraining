@@ -10,6 +10,8 @@
 
         public string ProductName { get; set; }
 
+        public decimal ProductPrice { get; set; }
+
         public Guid MerchantId { get; set; }
 
         public string MerchantName { get; set; }
@@ -24,6 +26,8 @@
 
         public int OrderQuantity { get; set; }
 
-        public decimal OrderTotal { get; set; }
+        public DateTime OrderDate { get; set; }
+
+        public string OrderMessage { get; set; }
     }
 }
