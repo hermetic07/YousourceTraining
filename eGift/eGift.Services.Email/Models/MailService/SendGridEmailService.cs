@@ -33,7 +33,7 @@ namespace EGift.Services.Email.Models.MailService
                 var client = new SendGridClient(apiKey);
 
 
-                var msg = MailHelper.CreateSingleEmail(new EmailAddress("emacandog@you-source.com", "EGift"),
+                var msg = MailHelper.CreateSingleEmail(new EmailAddress(email.From, "EGift"),
                     new EmailAddress(email.To), 
                     email.Subject, 
                     email.Body, 
