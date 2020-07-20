@@ -25,9 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orders", "Orders", "{9A4E04
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Emails", "Emails", "{73FD1B88-8AB7-4CEE-9C1B-EF4CB2BD66D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eGift.Services.Merchant", "eGift.Services.Merchant\eGift.Services.Merchant.csproj", "{AD600AFD-5F53-48DA-BCAB-677A84C20626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eGift.Services.Merchant", "eGift.Services.Merchant\eGift.Services.Merchant.csproj", "{AD600AFD-5F53-48DA-BCAB-677A84C20626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eGift.Services.Order", "eGift.Services.Order\eGift.Services.Order.csproj", "{00EDD252-5F92-488B-9EE9-69818C1F678F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eGift.Services.Order", "eGift.Services.Order\eGift.Services.Order.csproj", "{00EDD252-5F92-488B-9EE9-69818C1F678F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eGift.Services.Email", "eGift.Services.Email\eGift.Services.Email.csproj", "{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{00EDD252-5F92-488B-9EE9-69818C1F678F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00EDD252-5F92-488B-9EE9-69818C1F678F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00EDD252-5F92-488B-9EE9-69818C1F678F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{73FD1B88-8AB7-4CEE-9C1B-EF4CB2BD66D7} = {B2F23350-DBEE-49DA-9F47-BF0FBCA8974E}
 		{AD600AFD-5F53-48DA-BCAB-677A84C20626} = {CE810EC0-B7FE-4CA2-A1E8-0869368183D2}
 		{00EDD252-5F92-488B-9EE9-69818C1F678F} = {9A4E04D7-7232-4FA6-825C-2306E868DCB3}
+		{439F7F44-98DC-44CD-83A7-3D6A0FFB78A8} = {73FD1B88-8AB7-4CEE-9C1B-EF4CB2BD66D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79829E90-DC6C-4B9A-A6FC-4D15266E44C8}
