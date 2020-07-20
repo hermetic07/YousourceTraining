@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eGift.Services.Email\eGift.Services.Email.csproj" />
     <ProjectReference Include="..\Egift.Services.Merchant\Egift.Services.Merchant.csproj" />
     <ProjectReference Include="..\Egift.Services.Order\Egift.Services.Order.csproj" />
     <ProjectReference Include="..\Egift.Services.Product\Egift.Services.Product.csproj" />

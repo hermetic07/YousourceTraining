@@ -14,8 +14,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CreateOrderComponent implements OnInit {
 
-  productPrice: number;
-  productName: string;
   orderTotal = 0;
   orderCheckout = new Order();
   orderRequest: OrdersRequest;
@@ -28,8 +26,8 @@ export class CreateOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderCheckout.productId = this.route.snapshot.paramMap.get('id');
-    this.productName = this.route.snapshot.paramMap.get('productName');
-    this.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
+    this.orderCheckout.productName = this.route.snapshot.paramMap.get('productName');
+    this.orderCheckout.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
   }
 
   onSubmit(orderCheckoutForm: NgForm){
@@ -49,6 +47,6 @@ export class CreateOrderComponent implements OnInit {
   }
 
   calculateTotal(){
-    this.orderTotal = this.productPrice * this.orderCheckout.orderQuantity;
+    this.orderTotal = this.orderCheckout.productPrice * this.orderCheckout.orderQuantity;
   }
 }

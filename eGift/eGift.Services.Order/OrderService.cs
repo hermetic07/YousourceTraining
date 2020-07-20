@@ -6,16 +6,19 @@
     using Egift.Services.Order.Exceptions;
     using Egift.Services.Order.Extensions;
     using Egift.Services.Order.Messages;
+    using EGift.Services.Email;
     using Microsoft.Extensions.Logging;
 
     public class OrderService : IOrderService
     {
         private readonly IOrderDataGateway gateway;
+        private readonly IEmailSender emailSender;
         private readonly ILogger<OrderServiceException> logger;
 
-        public OrderService(IOrderDataGateway gateway, ILogger<OrderServiceException> logger)
+        public OrderService(IOrderDataGateway gateway, ILogger<OrderServiceException> logger, IEmailSender emailSender)
         {
             this.gateway = gateway;
+            this.emailSender = emailSender;
             this.logger = logger;
         }
 
@@ -26,6 +29,8 @@
             try
             {
                 await this.gateway.InsertOrderAsync(request.Order.AsEntity());
+                await this.emailSender.SendEmail(request.Order.AsSenderEmail());
+                await this.emailSender.SendEmail(request.Order.AsRecipientEmail());
             }
             catch (Exception ex)
             {

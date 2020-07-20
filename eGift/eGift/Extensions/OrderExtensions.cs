@@ -24,7 +24,9 @@
                     RecipientEmail = request.Data.RecipientEmail,
                     RecipientName = request.Data.RecipientName,
                     OrderQuantity = request.Data.OrderQuantity,
-                    OrderMessage = request.Data.OrderMessage
+                    OrderMessage = request.Data.OrderMessage,
+                    ProductName = request.Data.ProductName,
+                    ProductPrice = request.Data.ProductPrice
                 }
             };
 

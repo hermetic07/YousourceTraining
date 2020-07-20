@@ -14,6 +14,12 @@
         [JsonProperty("productId")]
         public Guid ProductId { get; set; }
 
+        [JsonProperty("productPrice")]
+        public decimal ProductPrice { get; set; }
+
+        [JsonProperty("productName")]
+        public string ProductName { get; set; }
+
         [JsonProperty("senderName")]
         public string SenderName { get; set; }
 

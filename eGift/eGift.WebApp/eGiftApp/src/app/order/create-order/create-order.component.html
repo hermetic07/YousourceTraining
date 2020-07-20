@@ -2,7 +2,7 @@
 <form class="col-sm-6"  #orderCheckoutForm="ngForm" (ngSubmit)="onSubmit(orderCheckoutForm)">
     <div class="form-group">
         <label for="productName">Product</label>
-        <input type="text" class="form-control" id="productName" [value]="productName" readonly>
+        <input type="text" class="form-control" id="productName" [value]="orderCheckout.productName" readonly>
     </div>
 
     <div class="form-group">
@@ -39,7 +39,7 @@
 
     <div class="form-group">
         <label for="orderQuantity">Price</label>
-        <input type="number" [(ngModel)]="productPrice" name="productPrice" class="form-control" id="productPrice" disabled>
+        <input type="number" [(ngModel)]="orderCheckout.productPrice" name="productPrice" class="form-control" id="productPrice" disabled>
     </div>
 
     <div class="form-group">

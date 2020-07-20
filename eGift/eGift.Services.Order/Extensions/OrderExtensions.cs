@@ -2,6 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Egift.Services.Email;
+    using Egift.Services.Email.Models;
     using Egift.Services.Order.Data.Entities;
     using Egift.Services.Order.Models;
 
@@ -72,6 +74,29 @@
                                 OrderMessage = order.OrderMessage,
                                 OrderDate = order.OrderDate
                             }).ToList();
+
+            return result;
+        }
+
+        public static EmailMessage AsSenderEmail(this Order order)
+        {
+            var result = new SenderEmailMessage()
+                .From()
+                .To(order.SenderEmail)
+                .Subject()
+                .Body(order.RecipientName,order.ProductName,order.ProductPrice,order.OrderQuantity)
+                .Build();
+
+            return result;
+        }
+        public static EmailMessage AsRecipientEmail(this Order order)
+        {
+            var result = new RecipientEmailMessage()
+                .From()
+                .To(order.RecipientEmail)
+                .Subject()
+                .Body(order.SenderName, order.ProductName, order.ProductPrice, order.OrderQuantity)
+                .Build();
 
             return result;
         }
