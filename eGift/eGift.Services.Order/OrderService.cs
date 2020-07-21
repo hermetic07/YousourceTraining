@@ -7,6 +7,8 @@
     using Egift.Services.Order.Extensions;
     using Egift.Services.Order.Messages;
     using EGift.Services.Email;
+    using EGift.Services.Email.Models.MailBuilder;
+    using EGift.Services.Email.Models.MailDirector;
     using Microsoft.Extensions.Logging;
 
     public class OrderService : IOrderService
@@ -29,8 +31,14 @@
             try
             {
                 await this.gateway.InsertOrderAsync(request.Order.AsEntity());
-                await this.emailSender.SendEmail(request.Order.AsSenderEmail());
-                await this.emailSender.SendEmail(request.Order.AsRecipientEmail());
+
+                var senderBuilder = new SenderEmailBuilder(request.Order.SenderEmail, request.Order.SenderName, request.Order.RecipientName, request.Order.ProductName, request.Order.ProductPrice, request.Order.OrderQuantity);
+                var senderEmailMessage = EmailDirector.ConstructEmail(senderBuilder);
+                var recipientBuilder = new RecipientEmailBuilder(request.Order.RecipientEmail, request.Order.RecipientName, request.Order.SenderName, request.Order.ProductName, request.Order.ProductPrice, request.Order.OrderQuantity);
+                var recipientEmailMessage = EmailDirector.ConstructEmail(recipientBuilder);
+
+                await this.emailSender.SendEmail(senderEmailMessage);
+                await this.emailSender.SendEmail(recipientEmailMessage);
             }
             catch (Exception ex)
             {

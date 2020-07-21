@@ -77,28 +77,5 @@
 
             return result;
         }
-
-        public static EmailMessage AsSenderEmail(this Order order)
-        {
-            var result = new SenderEmailMessage()
-                .From()
-                .To(order.SenderEmail)
-                .Subject()
-                .Body(order.RecipientName,order.ProductName,order.ProductPrice,order.OrderQuantity)
-                .Build();
-
-            return result;
-        }
-        public static EmailMessage AsRecipientEmail(this Order order)
-        {
-            var result = new RecipientEmailMessage()
-                .From()
-                .To(order.RecipientEmail)
-                .Subject()
-                .Body(order.SenderName, order.ProductName, order.ProductPrice, order.OrderQuantity)
-                .Build();
-
-            return result;
-        }
     }
 }

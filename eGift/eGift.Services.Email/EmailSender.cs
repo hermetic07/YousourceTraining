@@ -1,19 +1,19 @@
-﻿using Egift.Services.Email.Interface;
-using Egift.Services.Email.Models;
-using EGift.Services.Email.Exceptions;
-using EGift.Services.Email.Messages;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EGift.Services.Email
+﻿namespace EGift.Services.Email
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Egift.Services.Email.Interface;
+    using Egift.Services.Email.Models;
+    using EGift.Services.Email.Exceptions;
+    using EGift.Services.Email.Messages;
+    using Microsoft.Extensions.Logging;
+
     public class EmailSender : IEmailSender
     {
-        private IEmailService emailService;
         private readonly ILogger<SendGridException> logger;
+        private IEmailService emailService;
 
         public EmailSender(IEmailService emailService, ILogger<SendGridException> logger)
         {

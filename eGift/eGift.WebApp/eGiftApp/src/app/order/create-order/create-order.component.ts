@@ -38,8 +38,15 @@ export class CreateOrderComponent implements OnInit {
 
     this.apiService.postOrders(this.orderRequest).subscribe( data => {
       this.loading = false;
+
       orderCheckoutForm.reset();
       this.toastr.success('Order created', 'Success!');
+
+      this.orderCheckout.productId = this.route.snapshot.paramMap.get('id');
+      this.orderCheckout.productName = this.route.snapshot.paramMap.get('productName');
+      this.orderCheckout.productPrice = parseInt(this.route.snapshot.paramMap.get('productPrice'));
+      
+      console.log(this.orderCheckout);
     },
     error => {
       this.toastr.error(error,"Error");

@@ -2,6 +2,7 @@
 {
     using System.IO;
     using Microsoft.Extensions.Configuration;
+
     public class SendGridProvider
     {
         public readonly string SendGridKey = string.Empty;
